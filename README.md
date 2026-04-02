@@ -4,12 +4,9 @@ Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have genera
 This GitHub repository primarily contains the analytical scripts and pipelines used in the APGp1 flagship paper (Wu et al., unpublished).
 
 including:
-1. [Genome assembly] (https://github.com/Asian-Pan-Genome/APGp1/tree/main/assembly)
-2. 
+1. [Genome assembly](https://github.com/Asian-Pan-Genome/APGp1/tree/main/assembly)
 3. [Annotation](https://github.com/Asian-Pan-Genome/APGp1/tree/main/annotation)
-4. 
 5. [Graph](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Graph)
-6. 
 7. [SV](https://github.com/Asian-Pan-Genome/APGp1/tree/main/SV-related)
 
 
