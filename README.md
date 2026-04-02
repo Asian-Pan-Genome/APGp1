@@ -1,24 +1,36 @@
-# APG phase 1
-Phase 1 of APG
-A total of 320 assemblies from 160 EAS individuals are generated in APGp1.
+# Asian Pan-Genome project phase 1
+Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have generated a total of 320 de novo near-T2T assemblies from 160 East Asian (EAS) individuals.
 
+This GitHub repository primarily contains the analytical scripts and pipelines used in the APGp1 flagship paper (Wu et al., unpublished).
 
-This GitHub repository mainly includes scripts used in the flagship paper of APGp1 (Wu et al., 2026, unpublished). 
+including:
+1. Genome assembly
+2. Annotation
+3. Graph
+4. SV
 
-For scripts used in companion paper in APGp1, please see:
+---
 
-* [Centromere](https://github.com/Asian-Pan-Genome/Centromere) (Sun et al., unpublished)
+**Companion Papers & Specialized Repositories**
 
-* [Archaic introgression](https://github.com/Asian-Pan-Genome/ArchaicIntrogression) (Suo et al., unpulished)
+For specific analyses and methodologies developed during APGp1, please refer to the following companion studies:
+
+* [Centromere](https://github.com/Asian-Pan-Genome/Centromere)  (Sun et al., unpublished)
+
+* [Archaic introgression](https://github.com/Asian-Pan-Genome/ArchaicIntrogression)  (Suo et al., unpulished)
   New method: [ASMaid](https://github.com/Asian-Pan-Genome/ASMaid)
-* [Y chromosome](https://github.com/Asian-Pan-Genome/APGp1-Y) (Liu et al., unpublished)
+
+* [Y chromosome](https://github.com/Asian-Pan-Genome/APGp1-Y)  (Liu et al., unpublished)
 
 * [Complex regions]() (Han et al., unpublished)
 
 * [Tibetan pangenome]() (He et al., unpublished)
 
-* [S pangenome study]() (Yang et al., ubpublished)
+* [Schizophrenia pangenome study]() (Yang et al., ubpublished)
 
 * [PG-NUMT](https://github.com/LiantingFu/NUMT_Analysis) ([Fu et al., 2026, BioRxiv](https://www.biorxiv.org/content/10.64898/2026.02.26.708114v1.full))
 
-For more informtion, please e-mail to wudongya@zju.edu.cn (Dongya Wu, ZJU).
+
+
+---
+For more informtion, please contact Dongya Wu (Zhejiang University) at wudongya@zju.edu.cn .
