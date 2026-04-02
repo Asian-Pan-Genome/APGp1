@@ -4,10 +4,14 @@ Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have genera
 This GitHub repository primarily contains the analytical scripts and pipelines used in the APGp1 flagship paper (Wu et al., unpublished).
 
 including:
-1. Genome assembly
-2. Annotation
-3. Graph
-4. SV
+1. [Genome assembly] (https://github.com/Asian-Pan-Genome/APGp1/tree/main/assembly)
+2. 
+3. [Annotation](https://github.com/Asian-Pan-Genome/APGp1/tree/main/annotation)
+4. 
+5. [Graph](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Graph)
+6. 
+7. [SV](https://github.com/Asian-Pan-Genome/APGp1/tree/main/SV-related)
+
 
 ---
 
@@ -18,7 +22,8 @@ For specific analyses and methodologies developed during APGp1, please refer to 
 * [Centromere](https://github.com/Asian-Pan-Genome/Centromere)  (Sun et al., unpublished)
 
 * [Archaic introgression](https://github.com/Asian-Pan-Genome/ArchaicIntrogression)  (Suo et al., unpulished)
-  New method: [ASMaid](https://github.com/Asian-Pan-Genome/ASMaid)
+
+    New method: [ASMaid](https://github.com/Asian-Pan-Genome/ASMaid)
 
 * [Y chromosome](https://github.com/Asian-Pan-Genome/APGp1-Y)  (Liu et al., unpublished)
 
