@@ -36,6 +36,8 @@ The 320 phased haplotype-resolved genome assemblies (160 individuals × 2 haplot
 - Average QV: 64.5 (<1 error per Mbp)
 - Total assembly size range: 5.926 – 6.000 Gbp per individual
 
+---
+
 ### Reference Assemblies Used in This Study
 
 | Assembly | Version | 
@@ -117,28 +119,18 @@ Full list of 159 inversions available in **Supplementary Table 13**.
 
 | Dataset | Description | Link |
 |---------|-------------|------|
-| HGDP | Whole-genome sequences of 929 diverse individuals | https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGDP/data/ |
-| GIAB HG006/HG007 | NGS reads for EAS individuals | https://www.nist.gov/programs-projects/genome-bottle |
-| T2T-CHM13 Hi-C | Hi-C data for T2T-CHM13 | https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/arima/ |
-| gnomAD v4.1 | Population frequency data | https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint |
-| GTEx v8 | Tissue-specific expression | https://gtexportal.org/ |
+| [HGDP](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGDP/data/) | Whole-genome sequences of 929 diverse individuals |
+| [GIAB HG006/HG007](https://www.nist.gov/programs-projects/genome-bottle) | NGS reads for EAS individuals |
+| [T2T-CHM13 Hi-C](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/arima/) | Hi-C data for T2T-CHM13 |
+| [gnomAD v4.1](https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint) | Population frequency data |
+| [GTEx v8](https://gtexportal.org/) | Tissue-specific expression |
 
 ---
 
-### Summary Table for Quick Access
+## Contact 
+Please raise issues on this Github repository concerning this dataset.
+For more informtion, please contact Dongya Wu (Zhejiang University) at wudongya@zju.edu.cn .
 
-| Category | Accession / Link |
-|----------|------------------|
-| **Raw reads & assemblies (controlled)** | NGDC: PRJCA030428 / HRA010014 |
-| **T2T-CN1 reference** | https://genome.zju.edu.cn/Downloads |
-| **T2T-CHM13 reference** | NCBI GCF_009914755.1 |
-| **HPRCy1 graph** | https://github.com/human-pangenomics/hpp_pangenome_resources |
-| **CPC graph** | https://pog.fudan.edu.cn/cpc/#/data |
-| **PanSVMerger** | https://github.com/Asian-Pan-Genome/PanSVMerger |
-| **Centromere annotation scripts** | https://github.com/Asian-Pan-Genome/Centromere |
-| **APGp1 main repository** | https://github.com/Asian-Pan-Genome/APGp1 |
-
----
 ---
 
 **Companion Papers & Specialized Repositories**
@@ -155,7 +147,7 @@ For specific analyses and methodologies developed during APGp1, please refer to 
 
 * [Complex regions]() (Han et al., unpublished)
 
-* [Tibetan pangenome]() (He et al., unpublished)
+* [Tibetan pangenome](https://doi.org/10.64898/2025.12.16.694547) (He et al., 2025, bioRxiv)
 
 * [Schizophrenia pangenome study]() (Yang et al., ubpublished)
 
@@ -163,5 +155,3 @@ For specific analyses and methodologies developed during APGp1, please refer to 
 
 
 
----
-For more informtion, please contact Dongya Wu (Zhejiang University) at wudongya@zju.edu.cn .
