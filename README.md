@@ -22,11 +22,11 @@ including:
 
 The 320 phased haplotype-resolved genome assemblies (160 individuals × 2 haplotypes) are available through controlled access at the National Genomics Data Center (NGDC).
 
-| Data type | Accession | Link |
-|-----------|-----------|------|
-| BioProject | PRJCA030428 | https://ngdc.cncb.ac.cn/bioproject/PRJCA030428 |
-| Genome Sequence Archive (raw reads) | HRA010014 | https://ngdc.cncb.ac.cn/gsa/HRA010014 |
-| Assemblies (FASTA) | Controlled access | Apply via NGDC Data Access Committee |
+| Data type | Accession | 
+|-----------|-----------|
+| BioProject | [PRJCA030428](https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA030428) | 
+| Genome Sequence Archive (raw reads) | [HRA010014](https://ngdc.cncb.ac.cn/search/specific?db=hra&q=HRA010014)
+| Assemblies (FASTA) | Apply via NGDC Data Access Committee |
 
 > **Note**: To protect participant confidentiality, assemblies and raw sequencing data are available for general research through a controlled access process. Applications can be submitted to the Data Access Committee of APG at NGDC.
 
@@ -38,14 +38,14 @@ The 320 phased haplotype-resolved genome assemblies (160 individuals × 2 haplot
 
 ### Reference Assemblies Used in This Study
 
-| Assembly | Version | Accession / Link |
-|----------|---------|------------------|
-| T2T-CN1 | v1.0 | https://genome.zju.edu.cn/Downloads |
-| T2T-CHM13 | v2.0 | NCBI GCF_009914755.1 |
-| GRCh38 | p14 | https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/ |
-| HG002 (Q100) | - | https://github.com/marbl/HG002 |
-| HPRCy1 assemblies | - | https://www.ncbi.nlm.nih.gov/datasets/ |
-| HGSVC3 assemblies | - | https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC3/working/ |
+| Assembly | Version | 
+|----------|---------|
+| [T2T-CN1](https://genome.zju.edu.cn/Downloads) | v1.0 |
+| [T2T-CHM13](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz) | v2.0 | 
+| [GRCh38](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/) | p14 |  
+| [HG002](https://github.com/marbl/HG002) (Q100) | - |  
+| [HPRCy1 assemblies](https://www.ncbi.nlm.nih.gov/datasets/) | - | 
+| [HGSVC3 assemblies](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC3/working/) | - |
 
 ---
 
