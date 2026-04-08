@@ -1,4 +1,12 @@
-[toc]
+## Table of Contents
+
+- [Repository Structure](#repository-structure)
+- [Downloads](#downloads)
+- [Pipeline & Scripts](#pipeline--scripts)
+- [Data Access](#data-access)
+- [External Resources](#external-resources)
+- [Version History](#version-history)
+- [Contact](#contact)
 
 # Asian Pan-Genome project phase 1
 Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have generated a total of 320 de novo near-T2T assemblies from 160 East Asian (EAS) individuals.
@@ -140,128 +148,54 @@ This section lists all custom scripts and workflows developed for the APGp1 stud
 
 ---
 
-### Assembly
 
-| Script | Purpose | Input | Output | Contact | Status |
-|--------|---------|-------|--------|---------|--------|
-| `01_assembly/gfasm.pl` | Gap-filling by integrating alternative assemblies (hifiasm-Hi-C, Verkko-trio) | backbone assembly (FASTA), query assemblies (FASTA) | gap-filled assembly (FASTA) | Dongya Wu | ✅ Added (was missing) |
-| `01_assembly/gapfill_by_ont.sh` | Custom bash script for ONT-based gap-filling using yagcloser | draft assembly (FASTA), phased ONT reads (FASTQ) | gap-filled assembly (FASTA) | Dongya Wu, Chentao Yang | ✅ Added (was missing) |
-| `01_assembly/polish_nextpolish2.sh` | Two-round polishing with NextPolish2 using HiFi and NGS reads | assembly (FASTA), HiFi reads (FASTQ), NGS reads (FASTQ) | polished assembly (FASTA) | Chentao Yang | ✅ Available |
-| `01_assembly/manual_curation/` | Manual curation workflow for large structural errors | assembly (FASTA), T2T-CN1/CHM13 references | curated assembly (FASTA) | Dongya Wu | ✅ Available |
-
----
-
-### Annotation
-
-#### Repeatome
-
-| Script | Purpose | Input | Output | Contact | Status |
-|--------|---------|-------|--------|---------|--------|
-| `02_annotation/02a_repeatome/annotate_satellites.sh` | RepeatMasker + cenSat satellite annotation | assembly (FASTA) | repeat annotation (BED, OUT) | Jennifer | ✅ Available |
-| `02_annotation/02a_repeatome/custom_satellite_filter.sh` | Custom bash script for filtering satellite annotations (lines 1519-1521 in Methods) | raw satellite BED | filtered satellite BED | Jennifer | ✅ Added (was missing) |
-
-#### Centromere
-
-| Script | Purpose | Input | Output | Contact | Status |
-|--------|---------|-------|--------|---------|--------|
-| `02_annotation/02b_centromere/centromere_boundary_annotator.py` | Iterative boundary extension for centromere definition | αSat annotation (BED), satellite tracks (BED) | centromere/pericentromere regions (BED) | Jennifer | ✅ Available |
-| `02_annotation/02b_centromere/run_centromere_analysis.sh` | Complete centromere annotation workflow | assembly (FASTA) | centromere size table, satellite composition | Jennifer | ✅ Available |
-
-> **Note**: The centromere annotation repository ([Asian-Pan-Genome/Centromere](https://github.com/Asian-Pan-Genome/Centromere)) is now active.
-
-#### rDNA
-
-| Script | Purpose | Input | Output | Contact | Status |
-|--------|---------|-------|--------|---------|--------|
-| `02_annotation/02c_rdna/rdna_haplotyping.py` | SNP-based rDNA haplotype classification (Hap0-Hap3) | rDNA copy sequences (FASTA) | haplotype assignment (TSV) | Lei Nie | ✅ Available |
-| `02_annotation/02c_rdna/rdna_array_homogenization.py` | Local homogenization analysis of rDNA arrays | rDNA array sequences, ONT long reads | homogenization status (TSV) | Lei Nie | ✅ Available |
-
-#### Gene
-
-| Script | Purpose | Input | Output | Contact | Status |
-|--------|---------|-------|--------|---------|--------|
-| `02_annotation/02d_gene/hybrid_annotation_pipeline.sh` | Complete hybrid gene annotation (Liftoff + Exonerate + Augustus) | assembly (FASTA) | gene annotation (GFF, GTF) | Quanyu Chen | ✅ Available |
-| `02_annotation/02d_gene/liftoff_wrapper.sh` | Liftoff wrapper for GRCh38 annotation transfer | assembly (FASTA) | liftoff gene models (GFF) | Quanyu Chen | ✅ Available |
-| `02_annotation/02d_gene/exonerate_augustus_filter.py` | Filtering ≥95% overlap between Exonerate and Augustus predictions | Exonerate GFF, Augustus GFF | filtered complementary genes (GFF) | Quanyu Chen | ✅ Available |
-
-
----
-
-### SV Related
-
-| Script | Purpose | Input | Output | Contact | Status |
-|--------|---------|-------|--------|---------|--------|
-| `04_sv_related/04a_decomposition/PanSVMerger/pansvmerger.py` | Novel SV pruning algorithm to collapse similar paths | decomposed SVs (VCF), graph paths | non-redundant SVs (VCF) | Chentao Yang | ✅ Available |
-| `04_sv_related/04b_merging/merge_sv_sets.sh` | SURVIVOR + bcftools merge strategy for SV integration | SV calls from multiple callers (VCF) | merged SV set (VCF) | Chentao Yang, Quanyu Chen | ✅ Available |
-| `04_sv_related/04c_comparison/compare_sv_callers.py` | Compare pangenome-graph, assembly, and HiFi-based SV call sets | three SV call sets (VCF) | overlap statistics (TSV) | Chentao Yang | ✅ Available |
-| `04_sv_related/04d_population_stratification/compute_hudson_fst.py` | Hudson *Fst* calculation for multi-allelic SV sites | SV allele frequency table | *Fst* values per SV site (TSV) | Chentao Yang | ✅ Available |
-| `04_sv_related/04d_population_stratification/sv_allele_frequency.py` | Allele frequency calculation per SV site across populations | SV VCF, population metadata | allele frequency table (TSV) | Chentao Yang | ✅ Available |
-
-> **Note**: The `SV-related` folder previously contained only one short script. It has now been expanded to include the full PanSVMerger pipeline, merging strategies, comparison workflows, and Fst calculation.
-
----
-
-### Pangenome Graph
-
-| Script | Purpose | Input | Output | Contact | Status |
-|--------|---------|-------|--------|---------|--------|
-| `03_pangenome_graph/03a_construction/build_minigraph_cactus.sh` | Minigraph-Cactus (MC) graph construction | haplotype assemblies (FASTA), reference backbone (FASTA) | pangenome graph (GFA, GBZ) | Dongya Wu | ✅ Available |
-| `03_pangenome_graph/03a_construction/graph_filtering.sh` | Allele frequency filtering using `vg clip -d N` | MC graph (GFA) | filtered graph (GFA) | Dongya Wu | ✅ Available |
-| `03_pangenome_graph/03b_mapping/vg_giraffe_mapping.sh` | NGS short read mapping to MC graph | NGS reads (FASTQ), MC graph (GBZ) | aligned reads (GAF, BAM) | Qingyang Ni | ✅ Available |
-| `03_pangenome_graph/03b_mapping/graphaligner_mapping.sh` | PacBio HiFi read mapping to MC graph | HiFi reads (FASTQ), MC graph (GFA) | aligned reads (GAF) | Qingyang Ni | ✅ Available |
-| `03_pangenome_graph/03c_variant_calling/deepvariant_on_graph.sh` | DeepVariant variant calling from graph alignments | aligned reads (BAM), MC graph | small variants (VCF) | Qingyang Ni | ✅ Available |
-| `03_pangenome_graph/03d_graph_comparison/compare_reference_backbones.py` | Compare T2T-CN1 vs T2T-CHM13-referenced graphs | two MC graphs | node/edge counts, variant overlap | Dongya Wu | ✅ Available |
-
----
-
-### Loss-of-Function (pLoF)
-
-| Script | Purpose | Input | Output | Contact | Status |
-|--------|---------|-------|--------|---------|--------|
-| `05_loss_of_function/plof_annotation_vep.sh` | LOFTEE + VEP annotation for pLoF variants | variant VCF | annotated pLoF variants (VCF) | Anguo Liu | ✅ Available |
-| `05_loss_of_function/plof_phasing_analysis.py` | Classify genes into single/multiple/compound LoF categories | pLoF variants with phasing info | gene category table (TSV) | Anguo Liu | ✅ Available |
-| `05_loss_of_function/compound_plof_enrichment.R` | Enrichment analysis for tissue-specific and weakly constrained genes | gene categories, GTEx tau values, constraint metrics | enrichment statistics | Anguo Liu | ✅ Available |
-
----
-
-### Inversions
-
-| Script | Purpose | Input | Output | Contact | Status |
-|--------|---------|-------|--------|---------|--------|
-| `06_inversions/inversion_calling_pipeline.sh` | PAV + SVIM-asm + LSGvar integration for inversion calling | haplotype assemblies (FASTA), reference (FASTA) | non-redundant inversion calls (BED) | Feifei Zhou | ✅ Available |
-| `06_inversions/inversion_validation/bionano_validation.sh` | Bionano optical map validation for large inversions | Bionano contigs (XMAP), reference (FASTA) | validation report (TSV) | Feifei Zhou | ✅ Available |
-| `06_inversions/inversion_validation/hic_inversion_detection.py` | Hi-C contact matrix analysis for inversion validation | Hi-C reads (FASTQ), reference (FASTA) | contact heatmap, inversion signal | Feifei Zhou | ✅ Available |
-| `06_inversions/population_inversion_freq.R` | Fisher's exact test for population-stratified inversions | inversion calls, population metadata | stratified inversion list (TSV) | Feifei Zhou, Yafei Mao | ✅ Available |
-
----
-
-### Complex Loci
-
-#### MHC Region
-
-| Script | Purpose | Input | Output | Contact | Status |
-|--------|---------|-------|--------|---------|--------|
-| `07_complex_loci/07a_mhc/mhc_haplotyping.py` | Graph path extraction for HLA-A region structural haplotypes | MC graph (GFA), MHC coordinates | structural haplotype assignment (TSV) | Quanyu Chen | ✅ Available |
-| `07_complex_loci/07a_mhc/hla_annotation_immuannot.sh` | Immuannot for HLA and C4 gene annotation | assembly (FASTA) | HLA/C4 annotation (GFF) | Quanyu Chen | ✅ Available |
-
-#### SMN Region
-
-| Script | Purpose | Input | Output | Contact | Status |
-|--------|---------|-------|--------|---------|--------|
-| `07_complex_loci/07b_smn/smn_block_decomposition.py` | 8-block minimizer decomposition of SMN sequences | SMN locus sequences (FASTA) | block composition (TSV) | Dongya Wu | ✅ Available |
-| `07_complex_loci/07b_smn/smn_structural_haplotypes.py` | sHap assignment based on block order/orientation | block composition (TSV) | structural haplotype (sHap) assignment (TSV) | Dongya Wu | ✅ Available |
-| `07_complex_loci/07b_smn/smn_phylogenetic_tree.sh` | Maximum-likelihood phylogeny of SMN1/SMN2 genes | SMN gene sequences (FASTA) | phylogenetic tree (NWK) | Dongya Wu | ✅ Available |
-
----
-
-### Quality Control
-
-| Script | Purpose | Input | Output | Contact | Status |
-|--------|---------|-------|--------|---------|--------|
-| `quality_control/gci_evaluation.sh` | GCI continuity inspection for T2T-level assemblies | assembly (FASTA), HiFi/ONT reads | GCI score, gap report | Quanyu Chen | ✅ Available |
-| `quality_control/merqury_evaluation.sh` | Merqury QV and CV calculation | assembly (FASTA), NGS/HiFi reads | QV, CV values | Dongya Wu | ✅ Available |
-| `quality_control/flagger_evaluation.sh` | Flagger assembly error detection | assembly (FASTA), HiFi reads | error classification (duplicated/collapsed/erroneous) | Dongya Wu | ✅ Available |
-
+| Category | Script | Path | Contact |
+|----------|--------|------|---------|
+| **Assembly** | | | |
+| | Gap-filling by assemblies | [`01_assembly/gfasm.pl`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/01_assembly/gfasm.pl) | Dongya Wu |
+| | Gap-filling by ONT reads | [`01_assembly/gapfill_by_ont.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/01_assembly/gapfill_by_ont.sh) | Dongya Wu, Chentao Yang |
+| | Polishing with NextPolish2 | [`01_assembly/polish_nextpolish2.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/01_assembly/polish_nextpolish2.sh) | Chentao Yang |
+| | Manual curation | [`01_assembly/manual_curation/`](https://github.com/Asian-Pan-Genome/APGp1/tree/main/01_assembly/manual_curation) | Dongya Wu |
+| **Annotation** | | | |
+| | RepeatMasker + cenSat annotation | [`02_annotation/02a_repeatome/annotate_satellites.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/02_annotation/02a_repeatome/annotate_satellites.sh) | Yanqing Sun |
+| | Custom satellite filter | [`02_annotation/02a_repeatome/custom_satellite_filter.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/02_annotation/02a_repeatome/custom_satellite_filter.sh) | Yanqing Sun |
+| | Centromere boundary annotation | [`02_annotation/02b_centromere/centromere_boundary_annotator.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/02_annotation/02b_centromere/centromere_boundary_annotator.py) | Yanqing Sun |
+| | Centromere analysis workflow | [`02_annotation/02b_centromere/run_centromere_analysis.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/02_annotation/02b_centromere/run_centromere_analysis.sh) | Yanqing Sun |
+| | rDNA haplotyping | [`02_annotation/02c_rdna/rdna_haplotyping.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/02_annotation/02c_rdna/rdna_haplotyping.py) | Lei Nie |
+| | rDNA array homogenization | [`02_annotation/02c_rdna/rdna_array_homogenization.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/02_annotation/02c_rdna/rdna_array_homogenization.py) | Lei Nie |
+| | Hybrid gene annotation | [`02_annotation/02d_gene/hybrid_annotation_pipeline.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/02_annotation/02d_gene/hybrid_annotation_pipeline.sh) | Quanyu Chen |
+| **Pangenome Graph** | | | |
+| | MC graph construction | [`03_pangenome_graph/03a_construction/build_minigraph_cactus.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/03_pangenome_graph/03a_construction/build_minigraph_cactus.sh) | Dongya Wu |
+| | Graph filtering (vg clip) | [`03_pangenome_graph/03a_construction/graph_filtering.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/03_pangenome_graph/03a_construction/graph_filtering.sh) | Dongya Wu |
+| | NGS mapping with vg giraffe | [`03_pangenome_graph/03b_mapping/vg_giraffe_mapping.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/03_pangenome_graph/03b_mapping/vg_giraffe_mapping.sh) | Qingyang Ni |
+| | HiFi mapping with GraphAligner | [`03_pangenome_graph/03b_mapping/graphaligner_mapping.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/03_pangenome_graph/03b_mapping/graphaligner_mapping.sh) | Qingyang Ni |
+| | Graph-based variant calling | [`03_pangenome_graph/03c_variant_calling/deepvariant_on_graph.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/03_pangenome_graph/03c_variant_calling/deepvariant_on_graph.sh) | Qingyang Ni |
+| | Reference backbone comparison | [`03_pangenome_graph/03d_graph_comparison/compare_reference_backbones.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/03_pangenome_graph/03d_graph_comparison/compare_reference_backbones.py) | Dongya Wu |
+| **SV Related** | | | |
+| | PanSVMerger (SV pruning) | [`04_sv_related/04a_decomposition/PanSVMerger/pansvmerger.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/04_sv_related/04a_decomposition/PanSVMerger/pansvmerger.py) | Chentao Yang |
+| | SV merging (SURVIVOR+bcftools) | [`04_sv_related/04b_merging/merge_sv_sets.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/04_sv_related/04b_merging/merge_sv_sets.sh) | Chentao Yang, Quanyu Chen |
+| | SV caller comparison | [`04_sv_related/04c_comparison/compare_sv_callers.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/04_sv_related/04c_comparison/compare_sv_callers.py) | Chentao Yang |
+| | Hudson *Fst* calculation | [`04_sv_related/04d_population_stratification/compute_hudson_fst.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/04_sv_related/04d_population_stratification/compute_hudson_fst.py) | Chentao Yang |
+| | Allele frequency calculation | [`04_sv_related/04d_population_stratification/sv_allele_frequency.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/04_sv_related/04d_population_stratification/sv_allele_frequency.py) | Chentao Yang |
+| **Loss-of-Function** | | | |
+| | pLoF annotation with VEP | [`05_loss_of_function/plof_annotation_vep.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/05_loss_of_function/plof_annotation_vep.sh) | Anguo Liu |
+| | pLoF phasing analysis | [`05_loss_of_function/plof_phasing_analysis.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/05_loss_of_function/plof_phasing_analysis.py) | Anguo Liu |
+| | Compound pLoF enrichment | [`05_loss_of_function/compound_plof_enrichment.R`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/05_loss_of_function/compound_plof_enrichment.R) | Anguo Liu |
+| **Inversions** | | | |
+| | Inversion calling (PAV+SVIM-asm+LSGvar) | [`06_inversions/inversion_calling_pipeline.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/06_inversions/inversion_calling_pipeline.sh) | Feifei Zhou |
+| | Bionano validation | [`06_inversions/inversion_validation/bionano_validation.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/06_inversions/inversion_validation/bionano_validation.sh) | Feifei Zhou |
+| | Hi-C inversion detection | [`06_inversions/inversion_validation/hic_inversion_detection.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/06_inversions/inversion_validation/hic_inversion_detection.py) | Feifei Zhou |
+| | Population inversion frequency | [`06_inversions/population_inversion_freq.R`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/06_inversions/population_inversion_freq.R) | Feifei Zhou, Yafei Mao |
+| **Complex Loci** | | | |
+| | MHC structural haplotyping | [`07_complex_loci/07a_mhc/mhc_haplotyping.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/07_complex_loci/07a_mhc/mhc_haplotyping.py) | Quanyu Chen |
+| | HLA/C4 annotation (Immuannot) | [`07_complex_loci/07a_mhc/hla_annotation_immuannot.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/07_complex_loci/07a_mhc/hla_annotation_immuannot.sh) | Quanyu Chen |
+| | SMN block decomposition | [`07_complex_loci/07b_smn/smn_block_decomposition.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/07_complex_loci/07b_smn/smn_block_decomposition.py) | Dongya Wu |
+| | SMN structural haplotypes (sHaps) | [`07_complex_loci/07b_smn/smn_structural_haplotypes.py`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/07_complex_loci/07b_smn/smn_structural_haplotypes.py) | Dongya Wu |
+| | SMN phylogenetic tree | [`07_complex_loci/07b_smn/smn_phylogenetic_tree.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/07_complex_loci/07b_smn/smn_phylogenetic_tree.sh) | Dongya Wu |
+| **Quality Control** | | | |
+| | GCI continuity inspection | [`quality_control/gci_evaluation.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/quality_control/gci_evaluation.sh) | Quanyu Chen |
+| | Merqury QV/CV calculation | [`quality_control/merqury_evaluation.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/quality_control/merqury_evaluation.sh) | Dongya Wu |
+| | Flagger error detection | [`quality_control/flagger_evaluation.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/quality_control/flagger_evaluation.sh) | Dongya Wu |
 ---
 
 ### Summary Table of Key Resources
