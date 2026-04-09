@@ -1,4 +1,6 @@
 # Asian Pan-Genome project phase 1
+<img src="Docs/APG_logo.png" alt="APG Project Logo" style="zoom:3%;" />
+
 Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have generated a total of 320 de novo near-T2T assemblies from 160 East Asian (EAS) individuals. Detailed sequencing information for each individual is available in [`APGp1_metadata.csv`](APGp1_metadata.csv).
 
 ## Table of Contents
