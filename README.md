@@ -13,9 +13,9 @@ Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have genera
     + [Large Inversions](#large-inversions)
     + [LiftOver Resources](#liftover-resources)
     + [External Datasets Used in This Study](#external-datasets-used-in-this-study)
-  * [Pipeline & Scripts](#pipeline---scripts)
+  * [Pipeline & Scripts](#pipeline--scripts)
     + [Direct Links to External Repositories](#direct-links-to-external-repositories)
-  * [Companion Papers & Specialized Repositories](#companion-papers---specialized-repositories)
+  * [Companion Papers & Specialized Repositories](#companion-papers--specialized-repositories)
   * [Contact](#contact)
 
 
