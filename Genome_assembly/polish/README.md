@@ -4,7 +4,7 @@ This pipeline is designed for polishing genome assembly results, focusing on cor
 
 ## Pipeline Overview
 
-The polish pipeline consists of four main stages:
+The Polish pipeline consists of four main stages:
 
 1. **Sequencing Data Mapping** - Align ONT and HiFi reads to the draft genome
 2. **Structural Variant Detection and Correction (SV Polish)** - Detect and correct structural variants
@@ -46,7 +46,6 @@ draft.fasta
 
 1. Prepare the `init.conf` configuration file with the following variables:
    - `DATA`: Data directory path
-   - `NEXTGAP`: NextGap software path
    - `SGE_PARTITION`: SLURM partition name
    - `REFERENCE`: Reference genome path
    - `ONT`: ONT data root directory
@@ -57,7 +56,6 @@ draft.fasta
    - `NEXTPOLISH`: NextPolish2 software path
    - `SGE_THREADS1`, `SGE_THREADS2`: Thread count configuration
    - `SGE_MEM`: Memory configuration
-
 2. Prepare input data:
    - Draft genome FASTA file
    - HiFi reads (after CCS processing)
@@ -171,12 +169,6 @@ workdir/
 2. **SLURM Support**: The pipeline uses SJM (SLURM Job Manager) to submit jobs, requiring a pre-configured SLURM environment
 3. **k-mer Index**: Uses meryl to build k=15 repetitive sequence index for Winnowmap to filter repetitive regions
 4. **Data Paths**: Ensure data paths configured in `init.conf` are correct, especially the `ONT` and `HIFI` directory structures
-
-## Author and Maintenance
-
-- Author: Yang Chentao
-- Affiliation: Life Sciences Institute, Zhejiang University
-- Email: yangchentao@zju.edu.cn
 
 ## Changelog
 

@@ -1,10 +1,10 @@
 # Genome Gap Filling Pipeline
 
-This pipeline is designed for filling gaps in genome assemblies, detecting and trimming telomere misassemblies, and performing quality control checks.
+This pipeline is designed to fill gaps in genome assemblies, detect and trim telomere misassemblies, and perform quality control checks.
 
 ## Pipeline Overview
 
-The gap filling workflow consists of multiple stages:
+The gap-filling workflow consists of multiple stages:
 
 1. **Gap Region Extraction** - Extract gap positions and extend regions for analysis
 2. **Visualization** - Generate BAM snapshots and JBrowse2 configuration for manual inspection
@@ -305,12 +305,6 @@ workdir/
 - `process.md` - Process documentation
 - `resources.md` - Resource requirements and configurations
 - `deploy_pipeline.md` - Deployment instructions
-
-## Author and Maintenance
-
-- Author: Yang Chentao
-- Affiliation: Life Sciences Institute, Zhejiang University
-- Email: yangchentao@zju.edu.cn
 
 ## Changelog
 

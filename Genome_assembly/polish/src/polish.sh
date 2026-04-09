@@ -28,7 +28,6 @@ else
 fi
 
 echo "[INFO]: DATA is $DATA"
-echo "[INFO]: nextGap is $NEXTGAP"
 echo "[INFO]: slurm partition is $SGE_PARTITION"
 echo "[INFO]: reference is $REFERENCE"
 
