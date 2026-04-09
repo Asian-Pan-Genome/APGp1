@@ -1,5 +1,5 @@
 # Asian Pan-Genome project phase 1
-Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have generated a total of 320 de novo near-T2T assemblies from 160 East Asian (EAS) individuals.
+Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have generated a total of 320 de novo near-T2T assemblies from 160 East Asian (EAS) individuals. Detailed sequencing information for each individual is available in [`APGp1_metadata.csv`](APGp1_metadata.csv).
 
 ## Table of Contents
 
@@ -23,7 +23,7 @@ Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have genera
 This GitHub repository primarily contains the analytical scripts and pipelines used in the APGp1 flagship paper (Wu et al., unpublished).
 
 including:
-1. [Genome assembly](https://github.com/Asian-Pan-Genome/APGp1/tree/main/assembly) - Genome assembly, gap-filling, polishing
+1. [Genome_assembly](https://github.com/Asian-Pan-Genome/APGp1/tree/main/assembly) - Genome assembly, gap-filling, polishing
 2. [Annotation](https://github.com/Asian-Pan-Genome/APGp1/tree/main/annotation) - Repeat, centromere, rDNA, gene annotation 
 3. [SV](https://github.com/Asian-Pan-Genome/APGp1/tree/main/SV-related) — SV decomposition (PanSVMerger), merging, comparison, Fst
 4. [Pangenome_graph](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Graph) — MC graph construction, mapping, variant calling
@@ -41,9 +41,9 @@ Each folder contains its own `README.md` with detailed input/output specificatio
 
 The 320 phased haplotype-resolved genome assemblies (160 individuals × 2 haplotypes) are available through controlled access at the National Genomics Data Center (NGDC).
 
-| Data type | Accession | 
+| Data type | Accession |
 |-----------|-----------|
-| BioProject | [PRJCA030428](https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA030428) | 
+| BioProject | [PRJCA030428](https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA030428) |
 | Genome Sequence Archive (raw reads) | [HRA010014](https://ngdc.cncb.ac.cn/search/specific?db=hra&q=HRA010014)
 | Assemblies (FASTA) | Apply via NGDC Data Access Committee |
 
@@ -59,13 +59,13 @@ The 320 phased haplotype-resolved genome assemblies (160 individuals × 2 haplot
 
 ### Reference Assemblies Used in This Study
 
-| Assembly | Version | 
+| Assembly | Version |
 |----------|---------|
 | [T2T-CN1](https://genome.zju.edu.cn/Downloads) | v1.0 |
-| [T2T-CHM13](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz) | v2.0 | 
-| [GRCh38](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/) | p14 |  
-| [HG002](https://github.com/marbl/HG002) (Q100) | - |  
-| [HPRCy1 assemblies](https://www.ncbi.nlm.nih.gov/datasets/) | - | 
+| [T2T-CHM13](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz) | v2.0 |
+| [GRCh38](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/) | p14 |
+| [HG002](https://github.com/marbl/HG002) (Q100) | - |
+| [HPRCy1 assemblies](https://www.ncbi.nlm.nih.gov/datasets/) | - |
 | [HGSVC3 assemblies](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC3/working/) | - |
 
 ---
@@ -144,7 +144,6 @@ Full list of 159 inversions available in **Supplementary Table 13**.
 | [gnomAD v4.1](https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint) | Population frequency data |
 | [GTEx v8](https://gtexportal.org/) | Tissue-specific expression |
 
-
 ---
 
 ---
@@ -206,7 +205,6 @@ This section lists all custom scripts and workflows developed for the APGp1 stud
 | | Merqury QV/CV calculation | [`quality_control/merqury_evaluation.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/quality_control/merqury_evaluation.sh) | Dongya Wu |
 | | Flagger error detection | [`quality_control/flagger_evaluation.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/quality_control/flagger_evaluation.sh) | Dongya Wu |
 ---
-
 
 ---
 
