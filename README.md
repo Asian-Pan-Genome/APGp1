@@ -15,7 +15,7 @@ Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have genera
     + [External Datasets Used in This Study](#external-datasets-used-in-this-study)
   * [Pipeline & Scripts](#pipeline---scripts)
     + [Direct Links to External Repositories](#direct-links-to-external-repositories)
-  * [**Companion Papers & Specialized Repositories**](#--companion-papers---specialized-repositories--)
+  * [Companion Papers & Specialized Repositories](#companion-papers---specialized-repositories)
   * [Contact](#contact)
 
 
@@ -228,7 +228,7 @@ For your convenience, the following table provides direct links to the main repo
 ---
 
 
-## **Companion Papers & Specialized Repositories**
+## Companion Papers & Specialized Repositories
 
 For specific analyses and methodologies developed during APGp1, please refer to the following companion studies:
 
