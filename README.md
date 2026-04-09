@@ -1,15 +1,23 @@
-## Table of Contents
-
-- [Repository Structure](#repository-structure)
-- [Downloads](#downloads)
-- [Pipeline & Scripts](#pipeline--scripts)
-- [Data Access](#data-access)
-- [External Resources](#external-resources)
-- [Version History](#version-history)
-- [Contact](#contact)
-
 # Asian Pan-Genome project phase 1
 Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have generated a total of 320 de novo near-T2T assemblies from 160 East Asian (EAS) individuals.
+
+## Table of Contents
+
+  * [Repository Structure](#repository-structure)
+  * [Downloads](#downloads)
+    + [Genome Assemblies](#genome-assemblies)
+    + [Reference Assemblies Used in This Study](#reference-assemblies-used-in-this-study)
+    + [Annotation Files](#annotation-files)
+    + [Pangenome Graphs](#pangenome-graphs)
+    + [Variant Datasets](#variant-datasets)
+    + [Large Inversions](#large-inversions)
+    + [LiftOver Resources](#liftover-resources)
+    + [External Datasets Used in This Study](#external-datasets-used-in-this-study)
+  * [Pipeline & Scripts](#pipeline---scripts)
+    + [Direct Links to External Repositories](#direct-links-to-external-repositories)
+  * [**Companion Papers & Specialized Repositories**](#--companion-papers---specialized-repositories--)
+  * [Contact](#contact)
+
 
 ## Repository Structure
 This GitHub repository primarily contains the analytical scripts and pipelines used in the APGp1 flagship paper (Wu et al., unpublished).
@@ -23,6 +31,7 @@ including:
 6. [Inversions](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Inversions) — Large inversion detection and validation
 7. [Complex_loci](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Complex_loci) — MHC and SMN structural haplotyping
 
+Each folder contains its own `README.md` with detailed input/output specifications.
 
 ---
 
@@ -198,19 +207,6 @@ This section lists all custom scripts and workflows developed for the APGp1 stud
 | | Flagger error detection | [`quality_control/flagger_evaluation.sh`](https://github.com/Asian-Pan-Genome/APGp1/blob/main/quality_control/flagger_evaluation.sh) | Dongya Wu |
 ---
 
-### Summary Table of Key Resources
-
-| Category | Script/Workflow | Repository Location | Contact |
-|----------|-----------------|---------------------|---------|
-| Gap-filling (missing script) | `gfasm.pl` | `01_assembly/gfasm.pl` | Dongya Wu |
-| Gap-filling (missing script) | `gapfill_by_ont.sh` | `01_assembly/gapfill_by_ont.sh` | Dongya Wu, Chentao Yang |
-| Centromere (missing repo) | `centromere_boundary_annotator.py` | https://github.com/Asian-Pan-Genome/Centromere | Jennifer |
-| SV pruning (novel algorithm) | `PanSVMerger/pansvmerger.py` | `04_sv_related/04a_decomposition/PanSVMerger/` | Chentao Yang |
-| SV merging | `merge_sv_sets.sh` | `04_sv_related/04b_merging/` | Chentao Yang, Quanyu Chen |
-| SV comparison | `compare_sv_callers.py` | `04_sv_related/04c_comparison/` | Chentao Yang |
-| Hudson *Fst* | `compute_hudson_fst.py` | `04_sv_related/04d_population_stratification/` | Chentao Yang |
-| MHC haplotyping | `mhc_haplotyping.py` | `07_complex_loci/07a_mhc/` | Quanyu Chen |
-| SMN block decomposition | `smn_block_decomposition.py` | `07_complex_loci/07b_smn/` | Dongya Wu |
 
 ---
 
