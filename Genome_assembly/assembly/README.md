@@ -5,9 +5,9 @@ This repository contains a bioinformatic pipeline for generating Telomere-to-Tel
 ## Data QC and K-mer profiling
 ```01_ngs_fastp_yak_meryl.sh```: NGS trimming and k-mer library building using yak and meryl for trio-phasing and QV/phasing accuracy estimation.
 
-```03_hifi_filt_stat.sh```: HiFi reads filtering;
+```03_hifi_filt_stat.sh```: HiFi reads filtering. 
 
-```04_ont_filt_stat.sh```: ONT reads filtering;
+```04_ont_filt_stat.sh```: ONT reads filtering. 
 
 ## Trio/HiC-phased Assembly
 ```R3_verkko_trio_ont100k.sh```: [Verkko](https://github.com/marbl/verkko) in trio mode (for individuals with trio data). 
@@ -25,3 +25,8 @@ This repository contains a bioinformatic pipeline for generating Telomere-to-Tel
 * Gap-filling: use Hifiasm HiC-phased and verkko trio-phased assemblies to fill gaps.
   
 * ```gfasm.pl``` is a custome script to utilize assemblies from different strategies or tools to fill gaps. Specifically, to fill the gaps in reference backbone, query contigs were mapped against the reference contigs using minimap2 (v2.26-r1175; Li, 2018), retaining alignments with >20 Kbp aligned length and mapping quality > 55. To avoid overfilling artifacts, we required that the flanking unaligned proportion be less than 0.05 of the total length of reference contig, and the aligned proportion of the reference contig aligned within the query contig exceed 0.80.
+
+
+## Contact
+
+* For more information, please raise an issue or contact Dongya Wu (Eric) at wudongya@zju.edu.cn.
