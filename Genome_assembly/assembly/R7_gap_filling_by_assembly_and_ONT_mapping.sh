@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --job-name=IDgf
+#SBATCH --job-name=XXXgf
 #SBATCH --partition=cpu64
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -10,7 +10,7 @@
 date
 
 threads=30
-famID="FAM-ID [REPLACED]"
+famID="XXX"
 wkdir="path-to-wkdir"
 
 echo "## Checking assemblies!"
@@ -86,7 +86,7 @@ echo "##Scaffolding to chromosomes!"
 
 align="minimap2"
 
-###ref is set as CHM13v2, and may be CN1.
+###ref is set as T2T-CHM13.
 ref="/path-to-dir/CHM13v2m.fasta"
 
 ontdir="/path-to-dir/Nanopore/${famID}-01/binning/haplotype"
@@ -124,12 +124,12 @@ echo ">> Map ONT reads against ${hap} of ${famID}!"
 scaf="${hap}_ragtag/${famID}_${hap}_scaffold.fasta"
 echo "  ##ONT mapping start!"
 
-##mapping by winnowmap
+###Mapping by winnowmap
 meryl count threads=${threads} k=15 output ${hap}_ragtag/${hap}_merylDB $scaf
 meryl print threads=${threads} greater-than distinct=0.9998 ${hap}_ragtag/${hap}_merylDB > ${hap}_ragtag/${famID}_${hap}_repetitive_k15.txt
 winnowmap -W ${hap}_ragtag/${famID}_${hap}_repetitive_k15.txt -t ${threads} -ax map-ont $scaf ${ontdir}/haplotype-${hap}.fasta.gz | samtools view -bh -@ ${threads} > ${hap}_ragtag/${famID}_${hap}_ONT.bam
 
-##mapping by minimap2
+###Mapping by minimap2
 minimap2 -x map-ont ${scaf} ${ontdir}/haplotype-${hap}.fasta.gz > ${hap}_ragtag/${famID}_${hap}_ONT_minimap2.paf
 echo "  ##ONT mapping done!"
 
