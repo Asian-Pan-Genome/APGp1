@@ -21,4 +21,7 @@ This repository contains a bioinformatic pipeline for generating Telomere-to-Tel
 ```R7_gap_filling_by_assembly_and_ONT_mapping.sh```: 
 
 * Backbone: use hifiasm trio-phased assemblies as the primary assembly.
+  
 * Gap-filling: use Hifiasm HiC-phased and verkko trio-phased assemblies to fill gaps.
+  
+* ```gfasm.pl``` is a custome script to utilize assemblies from different strategies or tools to fill gaps. Specifically, to fill the gaps in reference backbone, query contigs were mapped against the reference contigs using minimap2 (v2.26-r1175; Li, 2018), retaining alignments with >20 Kbp aligned length and mapping quality > 55. To avoid overfilling artifacts, we required that the flanking unaligned proportion be less than 0.05 of the total length of reference contig, and the aligned proportion of the reference contig aligned within the query contig exceed 0.80.
