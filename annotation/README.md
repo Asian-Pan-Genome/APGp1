@@ -1,4 +1,4 @@
-# Assembly Annotation
+# Gene Annotation
 <img width="1532" height="1823" alt="903ca1e768a7529a7d10a89acdb74291" src="https://github.com/user-attachments/assets/582c486f-858e-40e5-8f09-1650f8931028" />
 
 **Workflow for gene annotation.** Three annotation approaches are recruited, including liftover from GRCh38.p14 annotation, homology search and de novo prediction.
