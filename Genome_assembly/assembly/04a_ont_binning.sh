@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --job-name=IDbiont
+#SBATCH --job-name=XXXbiont
 #SBATCH --partition all
 #SBATCH --nodes=2
 #SBATCH --ntasks=2
@@ -10,7 +10,7 @@
 date
 
 threads=40
-famID="FAMID[should be replaced]"
+famID="XXX"
 
 ont_100k=`ls /path-to-dir/Nanopore/${famID}-01/*pass_100k.fastq.gz|xargs`
 
