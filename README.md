@@ -85,22 +85,22 @@ All annotations are available for each APGp1 assembly. For bulk download, please
 
 | Dataset | Method | Version | Reference | Haplotype size | Nodes (M) | Edges (M) | Size (Gb) | Note |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| APGp1 | MC | 6.1.0 | T2T-CN1 | 320 | 87.868 | 120.872 | 3.418 | |
-| APGp1 | MC | 6.1.0 | T2T-CHM13 | 320 | 86.969 | 120.239 | 3.429 | |
-| APGp1 + HPRCy1 + HGSVC3 | MC | 6.1.0 | T2T-CN1 | 540 | 156.623 | 215.971 | 3.608 | |
-| APGp1 + HPRCy1 + HGSVC3 | MC | 6.1.0 | T2T-CHM13 | 540 | 156.385 | 217.306 | 3.621 | |
-| APGp1 | MG | 0.21-r606 | T2T-CN1 | 320 | 0.878 | 1.290 | 3.594 | |
-| APGp1 | MG | 0.21-r606 | T2T-CHM13 | 320 | 0.788 | 1.153 | 3.548 | |
-| APGp1 + HPRCy1 + HGSVC3 | MG | 0.21-r606 | T2T-CN1 | 540 | 1.357 | 1.997 | 3.904 | |
-| APGp1 + HPRCy1 + HGSVC3 | MG | 0.21-r606 | GRCh38 | 540 | 0.714 | 1.042 | 3.397 | |
-| HPRCy1 | MG | 0.21-r606 | T2T-CHM13 | 94 | 0.612 | 0.883 | 3.333 | |
-| HGSVC3 | MG | 0.21-r606 | T2T-CHM13 | 130 | 0.714 | 1.033 | 3.402 | |
-| HPRCy1eas-HGSVC3eas | MG | 0.21-r606 | T2T-CHM13 | 30 | 0.249 | 0.359 | 3.183 | |
-| HPRCy1eas-HGSVC3eas | MC | 2.1.1 | T2T-CN1 | 30 | 41.676 | 57.394 | 3.202 | |
-| CPC* | MC | 2.1.1 | T2T-CHM13 | 124 | 64.057 | 89.190 | 3.285 | Gao et al., 2023 |
-| HPRCy1* | MC | NA | T2T-CHM13 | 95 | 92.880 | 128.166 | 3.338 | Liao et al., 2023 |
-| CPC-HPRCy1* | MC | 2.1.1 | T2T-CHM13 | 212 | 119.125 | 164.899 | 3.510 | Gao et al., 2023 |
-| HPRCy1* | MG | 0.14 | T2T-CHM13 | 95 | 0.494 | 0.739 | 3.366 | Liao et al., 2023 |
+| APGp1 | MC | 6.1.0 | T2T-CN1 | 320 | 87.868 | 120.872 | 3.418 | [download]()|
+| APGp1 | MC | 6.1.0 | T2T-CHM13 | 320 | 86.969 | 120.239 | 3.429 |[download]() |
+| APGp1 + HPRCy1 + HGSVC3 | MC | 6.1.0 | T2T-CN1 | 540 | 156.623 | 215.971 | 3.608 |[download]() |
+| APGp1 + HPRCy1 + HGSVC3 | MC | 6.1.0 | T2T-CHM13 | 540 | 156.385 | 217.306 | 3.621 | [download]()|
+| APGp1 | MG | 0.21-r606 | T2T-CN1 | 320 | 0.878 | 1.290 | 3.594 | [download]()|
+| APGp1 | MG | 0.21-r606 | T2T-CHM13 | 320 | 0.788 | 1.153 | 3.548 |[download]() |
+| APGp1 + HPRCy1 + HGSVC3 | MG | 0.21-r606 | T2T-CN1 | 540 | 1.357 | 1.997 | 3.904 | [download]()|
+| APGp1 + HPRCy1 + HGSVC3 | MG | 0.21-r606 | GRCh38 | 540 | 0.714 | 1.042 | 3.397 |[download]() |
+| HPRCy1 | MG | 0.21-r606 | T2T-CHM13 | 94 | 0.612 | 0.883 | 3.333 |[download]() |
+| HGSVC3 | MG | 0.21-r606 | T2T-CHM13 | 130 | 0.714 | 1.033 | 3.402 |[download]() |
+| HPRCy1eas-HGSVC3eas | MG | 0.21-r606 | T2T-CHM13 | 30 | 0.249 | 0.359 | 3.183 | [download]()|
+| HPRCy1eas-HGSVC3eas | MC | 2.1.1 | T2T-CN1 | 30 | 41.676 | 57.394 | 3.202 | [download]()|
+| CPC* | MC | 2.1.1 | T2T-CHM13 | 124 | 64.057 | 89.190 | 3.285 | [Gao et al., 2023]() |
+| HPRCy1* | MC | NA | T2T-CHM13 | 95 | 92.880 | 128.166 | 3.338 | [Liao et al., 2023]() |
+| CPC-HPRCy1* | MC | 2.1.1 | T2T-CHM13 | 212 | 119.125 | 164.899 | 3.510 | [Gao et al., 2023]() |
+| HPRCy1* | MG | 0.14 | T2T-CHM13 | 95 | 0.494 | 0.739 | 3.366 | [Liao et al., 2023]() |
 
 ---
 
