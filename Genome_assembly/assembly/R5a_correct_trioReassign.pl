@@ -6,8 +6,8 @@ $comfa="${famID}.fa";
 
 system(qq(cat ${famID}_hifiasm_hic_ont.hic.hap*_ctg.fa > $comfa));
 
-${yak2}="/share/home/project/zhanglab/APG/NGS/${famID}-02/2.yak";
-${yak3}="/share/home/project/zhanglab/APG/NGS/${famID}-03/3.yak";
+${yak2}="/path-to-dir/NGS/${famID}-02/2.yak";
+${yak3}="/path-to-dir/NGS/${famID}-03/3.yak";
 
 system(qq(cat ${famID}_hifiasm_hic_ont.hic.hap*_ctg.ye | grep "^S" > ${famID}_combined.yak));
 
@@ -80,9 +80,9 @@ print "##Yak Trioeval\n";
 system(qq(yak trioeval ${yak2} ${yak3} $comfa\_trioC_pat > $comfa\_trioC_pat.ye));
 system(qq(yak trioeval ${yak2} ${yak3} $comfa\_trioC_mat > $comfa\_trioC_mat.ye));
 
-###synteny to CHM13
+###synteny to T2T-CHM13
 print "##$comfa\_pat synteny to CHM13...\n";
-system(qq(sh /share/home/zhanglab/user/wudongya/software/unimap_plot/run_unimap_dotplot.sh /share/home/project/zhanglab/APG/Reference/CHM13v2m.fasta $comfa\_trioC_pat $comfa\_trioC_pat));
+system(qq(sh /path-to-dir/software/unimap_plot/run_unimap_dotplot.sh /path-to-dir/Reference/CHM13v2m.fasta $comfa\_trioC_pat $comfa\_trioC_pat));
 print "##$comfa\_mat synteny to CHM13...\n";
-system(qq(sh /share/home/zhanglab/user/wudongya/software/unimap_plot/run_unimap_dotplot.sh /share/home/project/zhanglab/APG/Reference/CHM13v2m.fasta $comfa\_trioC_mat $comfa\_trioC_mat));
+system(qq(sh /path-to-dir/software/unimap_plot/run_unimap_dotplot.sh /path-to-dir/Reference/CHM13v2m.fasta $comfa\_trioC_mat $comfa\_trioC_mat));
 
