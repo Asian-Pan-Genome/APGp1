@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --job-name=R5_C139
+#SBATCH --job-name=R5_XXX
 #SBATCH --partition=cpu64
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -10,13 +10,13 @@
 date
 
 threads=50
-famID="C139-CBY01"
-hifi=`ls /share/home/project/zhanglab/APG/HiFi/${famID}-01/*.filt.fastq.gz |xargs`
-ont=`ls /share/home/project/zhanglab/APG/ONT/${famID}-01/*pass_100k.fastq.gz |xargs | sed "s/ /,/g"`
-h1=`ls /share/home/project/zhanglab/APG/HiC/${famID}-01/*_1.clean.fq.gz |xargs | sed "s/ /,/g"`
-h2=`ls /share/home/project/zhanglab/APG/HiC/${famID}-01/*_2.clean.fq.gz |xargs | sed "s/ /,/g"`
-yak2="/share/home/project/zhanglab/APG/NGS/${famID}-02/2.yak"
-yak3="/share/home/project/zhanglab/APG/NGS/${famID}-03/3.yak"
+famID="XXX"
+hifi=`ls /path-to-dir/HiFi/${famID}-01/*.filt.fastq.gz |xargs`
+ont=`ls /path-to-dir/ONT/${famID}-01/*pass_100k.fastq.gz |xargs | sed "s/ /,/g"`
+h1=`ls /path-to-dir/HiC/${famID}-01/*_1.clean.fq.gz |xargs | sed "s/ /,/g"`
+h2=`ls /path-to-dir/HiC/${famID}-01/*_2.clean.fq.gz |xargs | sed "s/ /,/g"`
+yak2="/path-to-dir/NGS/${famID}-02/2.yak"
+yak3="/path-to-dir/NGS/${famID}-03/3.yak"
 
 echo `hifiasm --version`
 echo $famID
@@ -36,5 +36,5 @@ for i in `ls | grep "p_ctg.gfa" | perl -npe "s/.p_ctg.gfa//"`; do awk '/^S/{prin
 for i in `ls | grep "p_ctg.gfa" | perl -npe "s/.p_ctg.gfa//"`; do yak trioeval ${yak2} ${yak3} ${i}_ctg.fa > ${i}_ctg.ye ; done
 
 echo "TrioC\n"
-perl /share/home/project/zhanglab/APG/Assembly/R5a_correct_trioReassign.pl ${famID}
+perl /path-to-dir/R5a_correct_trioReassign.pl ${famID}
 echo "TrioC finished!\n"
