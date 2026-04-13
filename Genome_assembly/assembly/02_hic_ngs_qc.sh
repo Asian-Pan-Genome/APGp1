@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --job-name=C010-hicQC
+#SBATCH --job-name=XXX-hicQC
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=50
