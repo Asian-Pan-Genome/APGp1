@@ -1,1 +1,4 @@
-Assembly, gap-filling and polishing in APGp1
+Assembly, gap-filling and polishing workflow
+**Assembly**
+**Gap-filling**
+**Polishing**
