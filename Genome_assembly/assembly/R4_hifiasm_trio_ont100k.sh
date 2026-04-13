@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --job-name=R4u-C139
+#SBATCH --job-name=R4-XXX
 #SBATCH --partition=cpu64
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -10,11 +10,11 @@
 date
 
 threads=40
-famID="C139-CBY01"
-hifi=`ls /share/home/project/zhanglab/APG/HiFi/${famID}-01/*.filt.fastq.gz |xargs`
-ont=`ls /share/home/project/zhanglab/APG/ONT/${famID}-01/*pass_100k.fastq.gz |xargs | sed "s/ /,/g"`
-yak2="/share/home/project/zhanglab/APG/NGS/${famID}-02/2.yak"
-yak3="/share/home/project/zhanglab/APG/NGS/${famID}-03/3.yak"
+famID="XXX"
+hifi=`ls /path-to-dir/HiFi/${famID}-01/*.filt.fastq.gz |xargs`
+ont=`ls /path-to-dir/ONT/${famID}-01/*pass_100k.fastq.gz |xargs | sed "s/ /,/g"`
+yak2="/path-to-dir/NGS/${famID}-02/2.yak"
+yak3="/path-to-dir/NGS/${famID}-03/3.yak"
 
 echo `hifiasm --version`
 echo $famID
@@ -41,11 +41,11 @@ for hap in `seq 1 2`
 do
 	echo "print Syntent for Hap${hap}!"
 	#CHM13v2
-	ref="/share/home/project/zhanglab/APG/Reference/CHM13v2m.fasta"
+	ref="/path-to-dir/Reference/CHM13v2m.fasta"
 	que=$famID"_hifiasm_trio_ont.dip.hap${hap}_ctg.fa"
 	output_prefix=$famID"_hifiasm_trio_ont.dip.hap${hap}"
 	##unimap
-	sh /share/home/zhanglab/user/wudongya/software/unimap_plot/run_unimap_dotplot.sh $ref $que $output_prefix
+	sh /path-to-dir/software/unimap_plot/run_unimap_dotplot.sh $ref $que $output_prefix
 	cat $output_prefix.unimap.paf | sort -k6,6 -k8,8n | awk '$2>10000 && $10>500' > $output_prefix.unimap.sort.fil.paf
 done
 
