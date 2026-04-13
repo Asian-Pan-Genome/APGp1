@@ -21,7 +21,7 @@ Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have genera
   * [Contact](#contact)
 
 
-## Repository Structure
+## Repository structure
 This GitHub repository primarily contains the analytical scripts and pipelines used in the APGp1 flagship paper (Wu et al., unpublished).
 
 including:
@@ -39,21 +39,17 @@ Each folder contains its own `README.md` with detailed input/output specificatio
 
 ## Downloads
 
-### Genome Assemblies
-
-The 320 phased haplotype-resolved genome assemblies (160 individuals × 2 haplotypes) are available through controlled access at the National Genomics Data Center (NGDC).
-
 | Data type | Accession |
 |-----------|-----------|
 | BioProject | [PRJCA030428](https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA030428) |
 | Genome Sequence Archive (raw reads) | [HRA010014](https://ngdc.cncb.ac.cn/search/specific?db=hra&q=HRA010014)
-| Assemblies (FASTA) | Apply via NGDC Data Access Committee |
+| Assemblies (FASTA) | [PRJCA030428](https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA030428) |
 
 > **Note**: To protect participant confidentiality, assemblies and raw sequencing data are available for general scientific research through a controlled access process. Applications can be submitted to the Data Access Committee of APG at NGDC.
 
 ---
 
-### Reference Assemblies Used in This Study
+### Reference assemblies used in this study
 
 | Assembly | Version |
 |----------|---------|
@@ -66,7 +62,7 @@ The 320 phased haplotype-resolved genome assemblies (160 individuals × 2 haplot
 
 ---
 
-### Annotation Files
+### Annotation files
 
 All annotations are available for each APGp1 assembly. For bulk download, please contact the corresponding authors.
 
@@ -127,17 +123,6 @@ All annotations are available for each APGp1 assembly. For bulk download, please
 
 ---
 
-### External Datasets Used in This Study
-
-| Dataset | Description | Link |
-|---------|-------------|------|
-| [HGDP](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGDP/data/) | Whole-genome sequences of 929 diverse individuals |
-| [GIAB HG006/HG007](https://www.nist.gov/programs-projects/genome-bottle) | NGS reads for EAS individuals |
-| [T2T-CHM13 Hi-C](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/arima/) | Hi-C data for T2T-CHM13 |
-| [gnomAD v4.1](https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint) | Population frequency data |
-| [GTEx v8](https://gtexportal.org/) | Tissue-specific expression |
-
----
 
 
 
