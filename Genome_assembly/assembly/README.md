@@ -2,7 +2,7 @@
 
 This repository contains a bioinformatic pipeline for generating Telomere-to-Telomere phased human genomes, by integrating PacBio HiFi, Ultra-long (>100 Kbp) ONT reads, and parental k-mer (Trio) or HiC data.
 
-For each individual, we generated multiple versions of genome assemblies. Comprehensive meta-information is available [here]().
+For each individual, we generated multiple versions of genome assemblies. Comprehensive meta-information is available [here](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Genome_assembly/APGp1_assembly_meta-information.csv).
 
 Generally, for individuals with trio data, we primarily employed hifiasm (trio mode) using high-depth PacBio HiFi and ultra-long (>100 kbp) ONT reads. A further hierarchical gap-filling integrating assemblies from hifiasm (HiC mode) and verkko (trio mode) was performed. For individuals lacking parental genomic data, we utilized hifiasm assemblies (HiC mode) and assigned paternal/maternal haplotypes based on the presence of sex chromosomes along with rigorous manual curation.
 
