@@ -15,7 +15,7 @@ This repository contains a bioinformatic pipeline for generating Telomere-to-Tel
 ```R4_hifiasm_trio_ont100k.sh```: [Hifiasm](https://github.com/chhylp123/hifiasm) in trio mode (for individuals with trio data). 
 
 ```R5_hifiasm_hic_ont.sh```: [Hifiasm](https://github.com/chhylp123/hifiasm) in Hi-C mode. 
-
+* The Hi-C phased contigs by hifiasm were subsequently evaluated by parental k-mers using ```yak trioeval```, and we re-phased these contigs into biologically paternal and maternal haplotype assemblies based on yak results.
 
 ## Multi-assembly gap filling
 ```R7_gap_filling_by_assembly_and_ONT_mapping.sh```: 
