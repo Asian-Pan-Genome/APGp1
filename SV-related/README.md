@@ -11,3 +11,50 @@ We conducted the SV merging at the caller level then followed by the individual 
 
 
 ![pipeline](./AsmSV-merge.method.png)
+
+#### SV decomposition and merging from Pangraph
+
+We used a novel pipelien to conduct the SV decomposition and merging from Pangraph, you can checek the details in this repo (https://github.com/Asian-Pan-Genome/PanSVMerger)
+
+
+
+#### Comparision of different SV datasets
+
+```shell
+# DATA
+Asm=asm.sv.sort.art.vcf.gz
+Pangraph=APGp1-MC-CN1v1.PanSV.art.vcf.gz
+ReadMap=hifi.sv.sort.art.vcf.gz
+Ref=CN1_combine.v1.0.fa
+```
+
+
+
+```shell
+# Asm-vs-readMap
+truvari bench -b $Asm -c $ReadMap -o truvari_bench --pctsize 0.5 --pctseq 0.2 --refdist 1000
+```
+
+
+
+```shell
+# Pangraph-vs-readMap
+truvari bench -b $Pangraph -c $Asm -o truvari_bench --pctsize 0.5 --pctseq 0.2 --refdist 1000
+truvari bench -b $Pangraph -c $ReadMap -o truvari_bench_v2 --pctsize 0.5 --pctseq 0.2 --refdist 1000 -f $Ref --dup-to-ins
+
+python3 src/vcf2bed_graphVCF.py truvari_bench/fn.vcf.gz >pansv.specific.vcf.bed
+python3 src/vcf2bed.py truvari_bench/fp.vcf.gz | cut -f 1-5 > hifisv.specific.site
+```
+
+
+
+```shell
+# Pangraph-vs-Asm
+truvari bench -b $Pangraph -c $Asm -o truvari_bench --pctsize 0.5 --pctseq 0.2 --refdist 1000
+
+# pansv specific
+python3 src/vcf2bed_graphVCF.py truvari_bench/fn.vcf.gz >pansv.specific.vcf.bed
+python3 src/vcf2bed.py truvari_bench/fp.vcf.gz | cut -f 1-5 > asmsv.specific.site
+python3 src/query_AF.py  ../../asm.sv.sort.vcf.bed asmsv.specific.site > asmsv.specific.vcf.bed
+```
+
