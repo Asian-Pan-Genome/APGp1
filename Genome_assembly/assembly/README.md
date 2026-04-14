@@ -2,6 +2,8 @@
 
 This repository contains a bioinformatic pipeline for generating Telomere-to-Telomere phased human genomes, by integrating PacBio HiFi, Ultra-Long ONT, and Parental k-mer (Trio) or Hi-C data.
 
+For each individual, we generated several versions of genome assemblies. Statitic information is provided [here]().
+
 ## Data QC and K-mer profiling
 ```01_ngs_fastp_yak_meryl.sh```: NGS trimming and k-mer library building using yak and meryl for trio-phasing and QV/phasing accuracy estimation.
 
