@@ -11,12 +11,8 @@ Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have genera
     + [Reference Assemblies Used in This Study](#reference-assemblies-used-in-this-study)
     + [Annotation Files](#annotation-files)
     + [Pangenome Graphs](#pangenome-graphs)
-    + [Variant Datasets](#variant-datasets)
-    + [Large Inversions](#large-inversions)
     + [LiftOver Resources](#liftover-resources)
     + [External Datasets Used in This Study](#external-datasets-used-in-this-study)
-  * [Pipeline & Scripts](#pipeline--scripts)
-    + [Direct Links to External Repositories](#direct-links-to-external-repositories)
   * [Companion Papers & Specialized Repositories](#companion-papers--specialized-repositories)
   * [Contact](#contact)
 
