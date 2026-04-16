@@ -1,4 +1,4 @@
-This repotory includes bioinformatic workflow for genome assembly, gap-filling and polishing.
+This repository includes bioinformatic workflows for genome assembly, gap-filling and polishing.
 
 * **[Assembly](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Genome_assembly/assembly)**
 
