@@ -6,4 +6,4 @@ This repository includes bioinformatic workflows for genome assembly, gap-fillin
 
 * **[Polishing](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Genome_assembly/polish)**
 
-Please see detailed README in each folder.
+For specific usage instructions, please refer to the detailed README located within each subdirectory.
