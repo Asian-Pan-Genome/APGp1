@@ -1,1 +1,12 @@
+# SMN locus decomposition
 
+Eight principal genomic blocks as the minimizer repeat units based on comprehensive pairwise sequence alignments across SMN loci.
+
+### CHM13 self-alignment
+
+![CHM13 self-alignment]()
+
+### Comparsion against non-human primates
+![non-human primates]()
+
+This strategy is nou automatic , therefore we recommand to use similar worflow like PGGB or PGR-TK
