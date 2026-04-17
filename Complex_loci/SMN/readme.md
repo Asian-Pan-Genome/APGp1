@@ -6,9 +6,9 @@ Eight principal genomic blocks as the minimizer repeat units based on comprehens
 
 ### CHM13 self-alignment ###
 
-![CHM13 self-alignment](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/SMN_chm13.png =400×)
+![CHM13 self-alignment](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/SMN_chm13.png =400x)
 
 ### Comparsion against non-human primates ###
-![non-human primates](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/SMN_primates.png =400×)
+![non-human primates](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/SMN_primates.png =400x)
 
 This strategy is nou automatic , therefore we recommand to use similar worflow like PGGB or PGR-TK
