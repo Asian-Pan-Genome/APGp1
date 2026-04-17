@@ -1,4 +1,4 @@
-**Genome assembly, gap-filling and polishing**
+# Genome assembly, gap-filling and polishing
 
 This repository includes bioinformatic workflows for genome assembly, gap-filling and polishing.
 
