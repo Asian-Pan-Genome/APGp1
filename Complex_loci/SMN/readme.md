@@ -1,5 +1,7 @@
 # SMN locus decomposition
 
+***
+
 Eight principal genomic blocks as the minimizer repeat units based on comprehensive pairwise sequence alignments across SMN loci.
 
 ### CHM13 self-alignment ###
