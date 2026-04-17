@@ -1,4 +1,4 @@
-Graph construction, comparison, and mapping.
+# Graph construction, comparison, and mapping.
 
 
 **Pangenome Grapg construction**
