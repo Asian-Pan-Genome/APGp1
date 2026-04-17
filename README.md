@@ -8,7 +8,7 @@ In this phase, we have generated 320 de novo near-T2T assemblies from 160 East A
 ## Table of Contents
 
   * [Repository Structure](#repository-structure)
-  * [Downloads](#downloads)
+  * [Resources](#downloads)
     + [Genome Assembly](#genome-assemblies)
     + [Annotation](#annotation-files)
     + [Pangenome Graph](#pangenome-graphs)
@@ -34,8 +34,9 @@ Each folder contains its own `README.md` with detailed input/output specificatio
 
 ---
 
-## Downloads
+## Resources
 
+### Sequencing reads
 | Data type | Accession |
 |-----------|-----------|
 | BioProject | [PRJCA030428](https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA030428) |
@@ -47,18 +48,19 @@ Each folder contains its own `README.md` with detailed input/output specificatio
 ---
 
 
-### Annotation files
+### Annotation
 
-All annotations are available for each APGp1 assembly. For bulk download, please contact the corresponding authors.
+Annotations are available for each APGp1 assembly.
 
 | Annotation type | Format | Description |
 |-----------------|--------|-------------|
-| Repeat elements (RepeatMasker) | BED, OUT | Full repeat annotation including SINE, LINE, LTR, etc. |
-| Centromeric satellites (αSat, HSat1-3, βSat, γSat) | BED | Pericentromeric and centromeric satellite annotation |
-| rDNA arrays and copies | BED, FASTA | rDNA regions and individual rDNA copy sequences with haplotypes (Hap0–Hap3) |
-| Protein-coding genes (hybrid annotation) | GFF, GTF | Liftoff + Exonerate + Augustus merged annotation |
-| HLA and C4 genes | GFF | Annotated using Immuannot |
-| SMN locus structural haplotypes | TXT | sHap assignments for 434 fully resolved SMN loci |
+| [Repeat elements](https://genome.zju.edu.cn/APG/Resources#TE) | BED, OUT | RepeatMasker annotation including SINE, LINE, LTR, etc. |
+| [Centromeric satellite arrays](https://genome.zju.edu.cn/APG/Resources#CenSat) | BED | Pericentromeric and centromeric satellite annotation |
+| [Centromeric HORs](https://genome.zju.edu.cn/APG/Resources#HOR) | BED | Centromeric high-order-repeat annotation |
+| [rDNA arrays](https://genome.zju.edu.cn/APG/Resources#rDNA) | BED, FASTA | rDNA regions and individual rDNA copy sequences |
+| [Protein-coding genes](https://genome.zju.edu.cn/APG/Resources#Gene) | GFF, GTF | Liftoff + Exonerate + Augustus merged annotation |
+| [HLA and C4 genes]() | GFF | Annotated using Immuannot |
+| [SMN structural haplotypes]() | TXT | sHap assignments for 434 fully resolved SMN loci |
 
 ---
 
@@ -102,6 +104,7 @@ All annotations are available for each APGp1 assembly. For bulk download, please
 ### External Datasets
 
 * Assembly
+
 | Assembly | Version |
 |----------|---------|
 | [T2T-CN1](https://genome.zju.edu.cn/Downloads) | v1.0 |
