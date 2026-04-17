@@ -1,32 +1,33 @@
 # Asian Pan-Genome project phase 1
 <img src="Docs/APG_logo.png" alt="APG Project Logo" style="zoom:1%;" />
 
-Welcome to the repository for APG Phase 1 (APGp1). In this phase, we have generated a total of 320 de novo near-T2T assemblies from 160 East Asian (EAS) individuals. Detailed sequencing information for each individual is available in [`APGp1_metadata.csv`](APGp1_metadata.csv).
+Welcome to the repository for APG Phase 1 (APGp1).
+
+In this phase, we have generated 320 de novo near-T2T assemblies from 160 East Asian (EAS) individuals. Detailed sequencing information for each individual is available in [`APGp1_metadata.csv`](APGp1_metadata.csv).
 
 ## Table of Contents
 
   * [Repository Structure](#repository-structure)
   * [Downloads](#downloads)
-    + [Genome Assemblies](#genome-assemblies)
-    + [Reference Assemblies Used in This Study](#reference-assemblies-used-in-this-study)
-    + [Annotation Files](#annotation-files)
-    + [Pangenome Graphs](#pangenome-graphs)
-    + [LiftOver Resources](#liftover-resources)
-    + [External Datasets Used in This Study](#external-datasets-used-in-this-study)
+    + [Genome Assembly](#genome-assemblies)
+    + [Annotation](#annotation-files)
+    + [Pangenome Graph](#pangenome-graphs)
+    + [Other Datasets](#liftover-resources)
+    + [External Datasets](#external-datasets-used-in-this-study)
   * [Companion Papers & Specialized Repositories](#companion-papers--specialized-repositories)
   * [Contact](#contact)
 
 
 ## Repository structure
-This GitHub repository primarily contains the analytical scripts and pipelines used in the APGp1 flagship paper (Wu et al., unpublished).
+This GitHub repository primarily contains the analytical scripts and pipelines used in the APGp1 flagship study (Wu et al., unpublished).
 
 including:
 1. [Genome_assembly](https://github.com/Asian-Pan-Genome/APGp1/tree/main/assembly) - Genome assembly, gap-filling, polishing
-2. [Annotation](https://github.com/Asian-Pan-Genome/APGp1/tree/main/annotation) - Repeat, centromere, rDNA, gene annotation 
-3. [SV](https://github.com/Asian-Pan-Genome/APGp1/tree/main/SV-related) — SV decomposition (PanSVMerger), merging, comparison, Fst
-4. [Pangenome_graph](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Graph) — MC graph construction, mapping, variant calling
+2. [Annotation](https://github.com/Asian-Pan-Genome/APGp1/tree/main/annotation) - Repeatome, centromere, rDNA, gene annotation 
+3. [SV](https://github.com/Asian-Pan-Genome/APGp1/tree/main/SV-related) — SV decomposition (PanSVMerger), merging, comparison
+4. [Pangenome_graph](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Graph) — Graph construction, comparison, mapping
 5. [Loss_of_function](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Loss_of_function) — pLoF annotation and phasing
-6. [Inversions](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Inversions) — Large inversion detection and validation
+6. [Inversions](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Inversions) — Large inversion detection
 7. [Complex_loci](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Complex_loci) — MHC and SMN structural haplotyping
 
 Each folder contains its own `README.md` with detailed input/output specifications.
@@ -45,18 +46,6 @@ Each folder contains its own `README.md` with detailed input/output specificatio
 
 ---
 
-### Reference assemblies used in this study
-
-| Assembly | Version |
-|----------|---------|
-| [T2T-CN1](https://genome.zju.edu.cn/Downloads) | v1.0 |
-| [T2T-CHM13](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz) | v2.0 |
-| [GRCh38](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/) | p14 |
-| [HG002](https://github.com/marbl/HG002) (Q100) | - |
-| [HPRCy1 assemblies](https://www.ncbi.nlm.nih.gov/datasets/) | - |
-| [HGSVC3 assemblies](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC3/working/) | - |
-
----
 
 ### Annotation files
 
@@ -96,7 +85,7 @@ All annotations are available for each APGp1 assembly. For bulk download, please
 
 ---
 
-### Variant Datasets
+### Other Datasets
 
 | Dataset | Variant types | Format | Description |
 |---------|---------------|--------|-------------|
@@ -110,37 +99,58 @@ All annotations are available for each APGp1 assembly. For bulk download, please
 ---
 
 
-### LiftOver Resources
+### External Datasets
 
-| Chain file | Source → Target | Link |
-|------------|-----------------|------|
-| T2T-CN1 ↔ T2T-CHM13 | T2T-CN1 v1.0 ↔ T2T-CHM13 v2.0 | [Download]() |
-| GRCh38 ↔ T2T-CN1 | GRCh38 p14 ↔ T2T-CN1 v1.0 | [Download]() |
+* Assembly
+| Assembly | Version |
+|----------|---------|
+| [T2T-CN1](https://genome.zju.edu.cn/Downloads) | v1.0 |
+| [T2T-CHM13](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz) | v2.0 |
+| [GRCh38](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/) | p14 |
+| [HG002](https://github.com/marbl/HG002) (Q100) | - |
+| [HPRCy1 assemblies](https://www.ncbi.nlm.nih.gov/datasets/) | - |
+| [HGSVC3 assemblies](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC3/working/) | - |
+
+* Other dataset
+
+| Type | File | Note | Link |
+|------------|--------|---------|------|
+| Chain | T2T-CN1 ↔ T2T-CHM13 | T2T-CN1 v1.0 ↔ T2T-CHM13 v2.0 | [Download]() |
+| Chain | GRCh38 ↔ T2T-CN1 | GRCh38 p14 ↔ T2T-CN1 v1.0 | [Download]() |
+| Variant | T2T-CN1 ↔ T2T-CHM13 | T2T-CN1 v1.0 ↔ T2T-CHM13 v2.0 | [Download]() |
+| GeneExpression | GRCh38 ↔ T2T-CN1 | MAGE dataset for 1KGP | [Download]() |
+
 
 ---
 
 
 
-
-## Companion Papers & Specialized Repositories
+## Companion Papers & Repositories
 
 For specific analyses and methodologies developed during APGp1, please refer to the following companion studies:
 
 * [Centromere](https://github.com/Asian-Pan-Genome/Centromere)  (Sun et al., unpublished)
+  
 
 * [Archaic introgression](https://github.com/Asian-Pan-Genome/ArchaicIntrogression)  (Suo et al., unpulished)
 
     New method: [ASMaid](https://github.com/Asian-Pan-Genome/ASMaid)
 
+
 * [Y chromosome](https://github.com/Asian-Pan-Genome/APGp1-Y)  (Liu et al., unpublished)
+
 
 * [Complex regions]() (Han et al., unpublished)
 
+
 * [Tibetan pangenome](https://doi.org/10.64898/2025.12.16.694547) (He et al., 2025, bioRxiv)
+
 
 * [Schizophrenia pangenome study]() (Yang et al., ubpublished)
 
+
 * [PG-NUMT](https://github.com/LiantingFu/NUMT_Analysis) ([Fu et al., 2026, BioRxiv](https://www.biorxiv.org/content/10.64898/2026.02.26.708114v1.full))
+
 
 ---
 
