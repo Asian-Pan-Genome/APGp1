@@ -2,7 +2,7 @@
 
 This repository provides workflows or scripts for genome assembly annotation, including transposable elements, genes, centromeres (satellite arrays and HORs), rDNA and related analysis.
 
-* **[Transposable element](https://github.com/Asian-Pan-Genome/APGp1/tree/main/annotation/te)**
+* **[Transposable element](https://github.com/Asian-Pan-Genome/APGp1/tree/main/annotation/TE)**
 
 * **[Gene](https://github.com/Asian-Pan-Genome/APGp1/tree/main/annotation/Gene)**
 
