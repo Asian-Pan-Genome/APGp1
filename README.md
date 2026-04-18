@@ -54,11 +54,11 @@ Annotations are available for each APGp1 assembly.
 
 | Annotation type | Format | Description |
 |-----------------|--------|-------------|
-| [Repeat elements](https://genome.zju.edu.cn/APG/Resources#TE) | BED, OUT | RepeatMasker annotation including SINE, LINE, LTR, etc. |
+| [Repeat elements](https://genome.zju.edu.cn/APG/Resources#TE) | GFF | RepeatMasker annotation including SINE, LINE, LTR, etc. |
 | [Centromeric satellite arrays](https://genome.zju.edu.cn/APG/Resources#CenSat) | BED | Pericentromeric and centromeric satellite annotation |
 | [Centromeric HORs](https://genome.zju.edu.cn/APG/Resources#HOR) | BED | Centromeric high-order-repeat annotation |
 | [rDNA arrays](https://genome.zju.edu.cn/APG/Resources#rDNA) | BED, FASTA | rDNA regions and individual rDNA copy sequences |
-| [Protein-coding genes](https://genome.zju.edu.cn/APG/Resources#Gene) | GFF, GTF | Liftoff + Exonerate + Augustus merged annotation |
+| [Protein-coding genes](https://genome.zju.edu.cn/APG/Resources#Gene) | GFF.gz | Liftoff + Exonerate + Augustus merged annotation |
 | [HLA and C4 genes]() | GFF | Annotated using Immuannot |
 | [SMN structural haplotypes](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/SMN_haplotypes_APGp1_HPRCy1_HGSVC3.csv) | TXT | sHap assignments for 434 fully resolved SMN loci |
 
