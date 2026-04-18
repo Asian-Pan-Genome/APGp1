@@ -10,7 +10,12 @@ For researchers looking to perform similar analyses on highly repetitive or dupl
 * PGR-TK: https://github.com/GeneDx/pgr-tk
 
 
-The [CHM13 coordinates](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/decom.chm13_SMN_blocks.bed) and [FASTA sequences](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/smn_block_seq.fa) of the eight SMN minimizer blocks are provided.
+### SMN resources
+
+* [Block coordinates (T2T-CHM13)](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/decom.chm13_SMN_blocks.bed)
+* [Block FASTA sequences](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/smn_block_seq.fa)
+* [Decomposed structural haplotypes](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/SMN_haplotypes_APGp1_HPRCy1_HGSVC3.csv)
+
 
 
 ***
