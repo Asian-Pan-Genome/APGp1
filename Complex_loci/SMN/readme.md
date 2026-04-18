@@ -9,6 +9,10 @@ For researchers looking to perform similar analyses on highly repetitive or dupl
 * PGGB: https://github.com/pangenome/pggb; see [Amylase paper](https://www.nature.com/articles/s41586-024-07911-1))
 * PGR-TK: https://github.com/GeneDx/pgr-tk
 
+
+The [CHM13 coordinates](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/decom.chm13_SMN_blocks.bed) and [FASTA sequences](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/smn_block_seq.fa) of the eight SMN minimizer blocks are provided.
+
+
 ***
 
 ### CHM13 self-alignment ###
