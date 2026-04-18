@@ -10,4 +10,4 @@ This repository provides workflows or scripts for genome assembly annotation, in
 
 * **[rDNA]()**
 
-You can access these annotation files in [APG protal](https://genome.zju.edu.cn/APG).
+You can access these annotation files in [APG portal](https://genome.zju.edu.cn/APG).
