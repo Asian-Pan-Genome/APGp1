@@ -60,7 +60,7 @@ Annotations are available for each APGp1 assembly.
 | [rDNA arrays](https://genome.zju.edu.cn/APG/Resources#rDNA) | BED, FASTA | rDNA regions and individual rDNA copy sequences |
 | [Protein-coding genes](https://genome.zju.edu.cn/APG/Resources#Gene) | GFF, GTF | Liftoff + Exonerate + Augustus merged annotation |
 | [HLA and C4 genes]() | GFF | Annotated using Immuannot |
-| [SMN structural haplotypes]() | TXT | sHap assignments for 434 fully resolved SMN loci |
+| [SMN structural haplotypes](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/SMN_haplotypes_APGp1_HPRCy1_HGSVC3.csv) | TXT | sHap assignments for 434 fully resolved SMN loci |
 
 ---
 
