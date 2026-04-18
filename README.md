@@ -68,18 +68,18 @@ Annotations are available for each APGp1 assembly.
 
 | Dataset | Method | Version | Reference | Haplotype size | Size (Gb) | Note |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| APGp1 | MC | 6.1.0 | T2T-CN1 | 320 | 3.418 | [access]()|
-| APGp1 | MC | 6.1.0 | T2T-CHM13 | 320 | 3.429 |[access]() |
-| APGp1 + HPRCy1 + HGSVC3 | MC | 6.1.0 | T2T-CN1 | 540 | 3.608 |[access]() |
-| APGp1 + HPRCy1 + HGSVC3 | MC | 6.1.0 | T2T-CHM13 | 540 | 3.621 | [access]()|
-| APGp1 | MG | 0.21-r606 | T2T-CN1 | 320 | 3.594 | [access]()|
-| APGp1 | MG | 0.21-r606 | T2T-CHM13 | 320 | 3.548 |[access]() |
-| APGp1 + HPRCy1 + HGSVC3 | MG | 0.21-r606 | T2T-CN1 | 540 | 3.904 | [access]()|
-| APGp1 + HPRCy1 + HGSVC3 | MG | 0.21-r606 | GRCh38 | 540 | 3.397 |[access]() |
-| HPRCy1 | MG | 0.21-r606 | T2T-CHM13 | 94 | 3.333 |[access]() |
-| HGSVC3 | MG | 0.21-r606 | T2T-CHM13 | 130 | 3.402 |[access]() |
-| HPRCy1eas-HGSVC3eas | MG | 0.21-r606 | T2T-CHM13 | 30 | 3.183 | [access]()|
-| HPRCy1eas-HGSVC3eas | MC | 2.1.1 | T2T-CN1 | 30 | 3.202 | [access]()|
+| APGp1 | MC | 6.1.0 | T2T-CN1 | 320 | 3.418 | [access](https://genome.zju.edu.cn/APG/Resources#graphs)|
+| APGp1 | MC | 6.1.0 | T2T-CHM13 | 320 | 3.429 |[access](https://genome.zju.edu.cn/APG/Resources#graphs) |
+| APGp1 + HPRCy1 + HGSVC3 | MC | 6.1.0 | T2T-CN1 | 540 | 3.608 |[access](https://genome.zju.edu.cn/APG/Resources#graphs) |
+| APGp1 + HPRCy1 + HGSVC3 | MC | 6.1.0 | T2T-CHM13 | 540 | 3.621 | [access](https://genome.zju.edu.cn/APG/Resources#graphs)|
+| APGp1 | MG | 0.21-r606 | T2T-CN1 | 320 | 3.594 | [access](https://genome.zju.edu.cn/APG/Resources#graphs)|
+| APGp1 | MG | 0.21-r606 | T2T-CHM13 | 320 | 3.548 |[access](https://genome.zju.edu.cn/APG/Resources#graphs) |
+| APGp1 + HPRCy1 + HGSVC3 | MG | 0.21-r606 | T2T-CN1 | 540 | 3.904 | [access](https://genome.zju.edu.cn/APG/Resources#graphs)|
+| APGp1 + HPRCy1 + HGSVC3 | MG | 0.21-r606 | GRCh38 | 540 | 3.397 |[access](https://genome.zju.edu.cn/APG/Resources#graphs) |
+| HPRCy1 | MG | 0.21-r606 | T2T-CHM13 | 94 | 3.333 |[access](https://genome.zju.edu.cn/APG/Resources#graphs) |
+| HGSVC3 | MG | 0.21-r606 | T2T-CHM13 | 130 | 3.402 |[access](https://genome.zju.edu.cn/APG/Resources#graphs) |
+| HPRCy1eas-HGSVC3eas | MG | 0.21-r606 | T2T-CHM13 | 30 | 3.183 | [access](https://genome.zju.edu.cn/APG/Resources#graphs)|
+| HPRCy1eas-HGSVC3eas | MC | 2.1.1 | T2T-CN1 | 30 | 3.202 | [access](https://genome.zju.edu.cn/APG/Resources#graphs)|
 | CPC* | MC | 2.1.1 | T2T-CHM13 | 124 | 3.285 | [Gao et al., 2023](https://pog.fudan.edu.cn/cpc/download//CPC.Phase1.CHM13v2-full/CPC.Phase1.CHM13v2-full.gfa.gz) |
 | HPRCy1* | MC | NA | T2T-CHM13 | 95 | 3.338 | [Liao et al., 2023](https://s3-us-west-2.amazonaws.com/human-pangenomics/pangenomes/freeze/freeze1/minigraph-cactus/hprc-v1.1-mc-chm13/hprc-v1.1-mc-chm13.gfa.gz) |
 | CPC-HPRCy1* | MC | 2.1.1 | T2T-CHM13 | 212 | 3.510 | [Gao et al., 2023](https://pog.fudan.edu.cn/cpc/download//CPC.HPRC.Phase1.CHM13v2/CPC.HPRC.Phase1.CHM13v2.gfa.gz) |
@@ -96,7 +96,7 @@ Annotations are available for each APGp1 assembly.
 | APGp1-private SVs | SV (≥50 bp) | VCF | 18,284 SV sites unique to APGp1 (72.5% singleton) |
 | Population-stratified SVs | SV (≥50 bp) | VCF, TXT | 2,935 SVs with Hudson *Fst* > 0.288 (top 5%) between EAS and non-EAS |
 | pLoF variants | Frameshift, stop-gain, splice | VCF | High-confidence pLoF variants per individual (median 195 per haplotype) |
-| CNV calls | Gene CNV | TXT | Copy number variations for 2,442 genes across 320 assemblies |
+| [CNV calls]() | Gene CNV | csv | Copy number variations for 2,442 genes across 320 assemblies |
 
 ---
 
@@ -110,18 +110,30 @@ Annotations are available for each APGp1 assembly.
 | [T2T-CN1](https://genome.zju.edu.cn/Downloads) | v1.0 |
 | [T2T-CHM13](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz) | v2.0 |
 | [GRCh38](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/) | p14 |
-| [HG002](https://github.com/marbl/HG002) (Q100) | - |
-| [HPRCy1 assemblies](https://www.ncbi.nlm.nih.gov/datasets/) | - |
-| [HGSVC3 assemblies](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC3/working/) | - |
+| [HG002](https://github.com/marbl/HG002) | Q100 |
+| [YAO](https://github.com/KANGYUlab/T2T-YAO-resources) | v1.1 |
+| [HPRCy1 assemblies](https://www.ncbi.nlm.nih.gov/datasets/) | year 1 |
+| [HGSVC3 assemblies](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC3/working/) | phase 3 |
+
 
 * Other dataset
 
 | Type | File | Note | Link |
 |------------|--------|---------|------|
-| Chain | T2T-CN1 ↔ T2T-CHM13 | T2T-CN1 v1.0 ↔ T2T-CHM13 v2.0 | [Download]() |
-| Chain | GRCh38 ↔ T2T-CN1 | GRCh38 p14 ↔ T2T-CN1 v1.0 | [Download]() |
-| Variant | T2T-CN1 ↔ T2T-CHM13 | T2T-CN1 v1.0 ↔ T2T-CHM13 v2.0 | [Download]() |
-| GeneExpression | GRCh38 ↔ T2T-CN1 | MAGE dataset for 1KGP | [Download]() |
+| Chain | CN1v1.0_hap_To_CHM13v2.0.over.chain.gz | T2T-CN1 v1.0 → T2T-CHM13 v2.0 | [Download]() |
+| Chain | CN1v1.0_hap_To_GRCh38.p14.over.chain.gz | T2T-CN1 v1.0 → GRCh38.p14 | [Download]() |
+| Chain | CHM13v2.0_To_CN1v1.0_hap.over.chain.gz | T2T-CHM13 v2.0 → T2T-CN1 v1.0 | [Download]() |
+| Chain | GRCh38.p14_To_CN1v1.0_hap.over.chain.gz | GRCh38.p14 → T2T-CN1 v1.0 | [Download]() |
+| Region | CN1v1_Easy_region.bed | Easy region in T2T-CN1 | [Download]() |
+| Region | CN1v1_CMRG_region.bed | CMRG region in T2T-CN1 | [Download]() |
+| Region | CN1v1_SD_region.bed | SD region in T2T-CN1 | [Download]() |
+| Region | CN1v1_rDNA_region.bed | rDNA arrays in T2T-CN1 | [Download]() |
+| Region | CN1v1_Centromere_region.bed | Centromere regions in T2T-CN1 | [Download]() |
+| Region | CN1v1_CentromerePlus_region.bed | Centromere+5Mb regions in T2T-CN1 | [Download]() |
+| Region | CN1v1_MHC_region.bed | MHC in T2T-CN1 | [Download]() |
+| Region | CN1v1.0_haploid.RM.out.gff | TE annotation in T2T-CN1 by Repeatmasker | [Download]() |
+| Region | CN1v1_VNTR_STR.anno | VNTR/STR in T2T-CN1 | [Download]() |
+| GeneExpression | MAGE RNAseq | MAGE dataset for 1KGP | [Download](https://github.com/mccoy-lab/MAGE/) |
 
 
 ---
