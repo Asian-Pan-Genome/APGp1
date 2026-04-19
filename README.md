@@ -43,7 +43,7 @@ Each folder contains its own `README.md` with detailed input/output specificatio
 | Genome Sequence Archive (raw reads) | [HRA010014](https://ngdc.cncb.ac.cn/search/specific?db=hra&q=HRA010014)
 | Assemblies (FASTA) | [PRJCA030428](https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA030428) |
 
-> **Note**: To protect participant confidentiality, assemblies and raw sequencing data are available for general scientific research through a controlled access process. Applications can be submitted to the Data Access Committee of APG at NGDC (https://ngdc.cncb.ac.cn/).
+> **Note**: To protect participant confidentiality, assemblies and raw sequencing data are available for general scientific research through a controlled access process in accordance with relevant regulations. Applications can be submitted to the Data Access Committee of APG at NGDC (https://ngdc.cncb.ac.cn/).
 
 ---
 
