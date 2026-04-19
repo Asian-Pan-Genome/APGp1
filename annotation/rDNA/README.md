@@ -57,4 +57,4 @@ awk 'OFS="\t" {print $1,$4,"0",$3}' snp.ids.bed | uniq  > snp.map
 plink --file snp --make-bed --allow-extra-chr
 plink --file snp --allow-extra-chr --pca --out pca
 ```
-Finally, the PCA results are visualized using the ```PCA.R`` script, and haplotypes are classified based on the PCA plot.
+Finally, the PCA results are visualized using the ```PCA.R``` script, and haplotypes are classified based on the PCA plot.
