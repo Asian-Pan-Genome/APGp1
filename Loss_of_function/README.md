@@ -58,7 +58,7 @@ Private pLoF variants were annotated as potential artifacts based on:
 - Context:
   - MNP  
   - low-complexity regions (LCR)  
-  - reference assembly errors  
+  - reference assembly errors  (in GRCh38)
   - ambiguous alignments  
 
 ---
@@ -130,14 +130,6 @@ Expression specificity was assessed using **tau (τ)** from GTEx v8:
 
 ---
 
-## Summary
-
-This pipeline integrates:
-
-- Graph-based variant discovery  
-- Functional annotation (LOFTEE)  
-- Benchmark validation (HG002)  
-- Cross-platform comparison (NGS vs graph)  
-- Gene-level functional interpretation  
-
-It provides a robust framework for studying **loss-of-function variation at population scale**.
+## Contact 
+Please raise issues on this Github repository concerning this dataset.
+For more informtion, please contact Anguo Liu (Zhejiang University) at liuanguo@zju.edu.cn or Dongya Wu (Zhejiang University) at wudongya@zju.edu.cn .
