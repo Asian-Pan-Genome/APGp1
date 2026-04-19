@@ -48,4 +48,5 @@ repeatmasker \
 ##  Contact
 
 For questions about the analysis scripts, please open an [issue](../../issues) in this repository.  
-For questions about the pipeline or annotation files, please visit the [Centromere repository](https://github.com/Asian-Pan-Genome/Centromere
+
+For questions about the pipeline or annotation files, please visit the [Centromere repository](https://github.com/Asian-Pan-Genome/Centromere)
