@@ -113,8 +113,8 @@ Compound category was further divided into:
 
 Gene essentiality was evaluated using:
 
-- **pLI** (LoF intolerance) [Lek et al., 2016](https://www.nature.com/articles/nature19057) 
-- **sₕₑₜ** (selection coefficient for heterozygous variants) [Zeng et al., 2024](https://www.nature.com/articles/s41588-024-01820-9) 
+- **pLI** (LoF intolerance) [(Lek et al., 2016)](https://www.nature.com/articles/nature19057) 
+- **sₕₑₜ** (selection coefficient for heterozygous variants) [(Zeng et al., 2024)](https://www.nature.com/articles/s41588-024-01820-9) 
 
 Thresholds:
 
