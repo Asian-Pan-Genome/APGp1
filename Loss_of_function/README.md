@@ -123,7 +123,7 @@ Thresholds:
 
 ### Tissue specificity
 
-Expression specificity was assessed using **tau (τ)** from GTEx v8:
+Expression specificity was assessed using **tau (τ)** from GTEx v8 [Palmer et al., 2021](https://www.aging-us.com/article/202648/text):
 
 - τ ranges from 0 (ubiquitous expression) to 1 (tissue-specific)  
 - High specificity defined as: τ ≥ 0.6  
