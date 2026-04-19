@@ -17,7 +17,7 @@ This includes:
 
 ---
 
-## 🧬 Analysis Scripts
+##  Analysis Scripts
 
 The following scripts contribute to the comparative analyses described in the associated publication.
 
@@ -28,8 +28,24 @@ The following scripts contribute to the comparative analyses described in the as
 | **Supplementary Figure** | Chr9 centromere size and satellite length across super-populations |
 
 ---
+##  Repeat & Transposable Element Annotation
 
-## 📬 Contact
+Repeat and transposable elements were identified using **RepeatMasker (v4.1.2)** with the **Dfam (v3.3)** database. The analysis was run in sensitive mode (`-s`) with the human species library and the RMBlast search engine:
+
+
+**Command:**
+
+```bash
+repeatmasker \
+  -species human \
+  -e rmblast \
+  -s \
+  -pa 30 \
+  $fullfa \
+  -html -gff \
+  -dir $outdir
+```
+##  Contact
 
 For questions about the analysis scripts, please open an [issue](../../issues) in this repository.  
 For questions about the pipeline or annotation files, please visit the [Centromere repository](https://github.com/Asian-Pan-Genome/Centromere
