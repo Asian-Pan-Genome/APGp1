@@ -113,8 +113,8 @@ Compound category was further divided into:
 
 Gene essentiality was evaluated using:
 
-- **pLI** (LoF intolerance)  
-- **sₕₑₜ** (selection coefficient for heterozygous variants)  
+- **pLI** (LoF intolerance) [Lek et al., 2016](https://www.nature.com/articles/nature19057) 
+- **sₕₑₜ** (selection coefficient for heterozygous variants) [Zeng et al., 2024](https://www.nature.com/articles/s41588-024-01820-9) 
 
 Thresholds:
 
@@ -123,7 +123,7 @@ Thresholds:
 
 ### Tissue specificity
 
-Expression specificity was assessed using **tau (τ)** from GTEx v8 [Palmer et al., 2021](https://www.aging-us.com/article/202648/text):
+Expression specificity was assessed using **tau (τ)** from GTEx v8 [(Palmer et al., 2021)](https://www.aging-us.com/article/202648/text):
 
 - τ ranges from 0 (ubiquitous expression) to 1 (tissue-specific)  
 - High specificity defined as: τ ≥ 0.6  
