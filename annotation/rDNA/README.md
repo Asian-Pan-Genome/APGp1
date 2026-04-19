@@ -1,4 +1,4 @@
-# Human rDNA Analysis Pipeline for APGp1
+# Human rDNA Analysis for APGp1
 
 This repository contains a pipeline for annotating rDNA arrays in the human genome and classifying haplotypes.
 
@@ -10,7 +10,7 @@ This repository contains a pipeline for annotating rDNA arrays in the human geno
 - stringdecomposer
 - plink
 
-## rDNA Annotation and decomposition
+## rDNA annotation and decomposition
 First, the rDNA reference sequence is converted into a BLAST database:
 ```bash
 makeblastdb -in ${human_rdna_reference}.fa -parse_seqids -title "rdna" -dbtype nucl -out ${rdna_db}/rdna
