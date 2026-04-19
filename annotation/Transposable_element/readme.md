@@ -18,3 +18,5 @@ repeatmasker \
   -dir $outdir
 ```
 
+TE annotations are accessible via the [APG portal](https://genome.zju.edu.cn/APG).
+
