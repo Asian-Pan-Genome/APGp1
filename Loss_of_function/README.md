@@ -100,6 +100,8 @@ Genes were categorized based on pLoF variant patterns:
 - **Homozygous**  
 - **Compound heterozygous**  
 
+![demo](pLoF.classification.png)
+
 Compound category was further divided into:
 
 - **Strict compound**: multiple heterozygous variants per allele  
