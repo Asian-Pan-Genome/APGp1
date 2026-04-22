@@ -12,7 +12,6 @@ In phase 1, we generated 320 *de novo* near-T2T assemblies from 160 East Asian (
     + [Genome Assembly](#genome-assemblies)
     + [Annotation](#annotation-files)
     + [Pangenome Graph](#pangenome-graphs)
-    + [Other Datasets](#liftover-resources)
     + [External Datasets](#external-datasets-used-in-this-study)
   * [Companion Papers & Repositories](#companion-papers--specialized-repositories)
   * [Contact](#contact)
