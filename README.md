@@ -98,8 +98,8 @@ Annotations are available for each APGp1 assembly.
 | [GRCh38](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/) | p14 |
 | [HG002](https://github.com/marbl/HG002) | Q100 |
 | [YAO](https://github.com/KANGYUlab/T2T-YAO-resources) | v1.1 |
-| [HPRCy1 assemblies](https://www.ncbi.nlm.nih.gov/datasets/) | year 1 |
-| [HGSVC3 assemblies](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC3/working/) | phase 3 |
+| [HPRCy1](https://www.ncbi.nlm.nih.gov/datasets/) | year 1 |
+| [HGSVC3](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC3/working/) | phase 3 |
 
 
 * Other Datasets
