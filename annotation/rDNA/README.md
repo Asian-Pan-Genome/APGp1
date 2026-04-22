@@ -1,4 +1,4 @@
-# Human rDNA Analysis for APGp1
+# Human rDNA sequence analysis
 
 This repository contains a pipeline for annotating rDNA arrays in the human genome and classifying haplotypes.
 
@@ -29,7 +29,7 @@ The pipeline includes several scripts::
 * ```convert2bed.py```: a script from [HORmon](https://github.com/ablab/HORmon/tree/main/HORmon) that converts stringdecomposer TSV output to BED format.
 * ```stv.sh```: derives the component order of 5 kb rDNA segments from the stringdecomposer results. This script was originally deposited at (https://github.com/fedorrik/stv_chm13) and has been modified to fit this pipeline.
 
-## rDNA variant calling and haplotype classification
+## rDNA variant calling and haplotyping
 For each rDNA copy, the varians are called using [Mummer](https://github.com/mummer4/mummer) as follows:
 ```bash
 nucmer --maxmatch -t 5 -l 100 -c 1000 -D 1 ${human_rdna_reference}.fa rDNA${index}.fasta --delta ./map/${index}.delta
