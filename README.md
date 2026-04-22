@@ -40,7 +40,7 @@ Each folder contains its own `README.md` with detailed input/output specificatio
 | Data type | Accession |
 |-----------|-----------|
 | BioProject | [PRJCA030428](https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA030428) |
-| Genome Sequence Archive (raw reads) | [HRA010014](https://ngdc.cncb.ac.cn/search/specific?db=hra&q=HRA010014)
+| Genome Sequence Archive (Raw reads) | [HRA010014](https://ngdc.cncb.ac.cn/search/specific?db=hra&q=HRA010014)
 | Assemblies (FASTA) | [PRJCA030428](https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA030428) |
 
 > **Note**: To protect participant confidentiality, assemblies and raw sequencing data are available for general scientific research through a controlled access process in accordance with relevant regulations. Applications can be submitted to the Data Access Committee of APG at NGDC (https://ngdc.cncb.ac.cn/).
@@ -60,7 +60,7 @@ Annotations are available for each APGp1 assembly.
 | [rDNA arrays](https://genome.zju.edu.cn/APG/Resources#rDNA) | BED, FASTA | rDNA regions and individual rDNA copy sequences |
 | [Protein-coding genes](https://genome.zju.edu.cn/APG/Resources#Gene) | GFF.gz | Liftoff + Exonerate + Augustus merged annotation |
 | [HLA and C4 genes]() | GFF | Annotated using Immuannot |
-| [SMN structural haplotypes](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/SMN_haplotypes_APGp1_HPRCy1_HGSVC3.csv) | TXT | sHap assignments for 434 fully resolved SMN loci |
+| [SMN structural haplotypes (sHap)](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/SMN_haplotypes_APGp1_HPRCy1_HGSVC3.csv) | TXT | sHap assignments for 434 fully resolved SMN loci |
 
 ---
 
@@ -87,19 +87,6 @@ Annotations are available for each APGp1 assembly.
 
 ---
 
-### Other Datasets
-
-| Dataset | Variant types | Format | Description |
-|---------|---------------|--------|-------------|
-| Graph-decomposed variants (APGp1) | SNP, InDel, SV, MNP | VCF | 149,808 SVs across 71,434 sites (T2T-CN1 reference) |
-| Graph-decomposed variants (GLOBALp1) | SNP, InDel, SV, MNP | VCF | 116,097 SV loci containing >483,000 SVs |
-| APGp1-private SVs | SV (≥50 bp) | VCF | 18,284 SV sites unique to APGp1 (72.5% singleton) |
-| Population-stratified SVs | SV (≥50 bp) | VCF, TXT | 2,935 SVs with Hudson *Fst* > 0.288 (top 5%) between EAS and non-EAS |
-| pLoF variants | Frameshift, stop-gain, splice | VCF | High-confidence pLoF variants per individual (median 195 per haplotype) |
-| [CNV calls]() | Gene CNV | csv | Copy number variations for 2,442 genes across 320 assemblies |
-
----
-
 
 ### External Datasets
 
@@ -116,7 +103,7 @@ Annotations are available for each APGp1 assembly.
 | [HGSVC3 assemblies](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC3/working/) | phase 3 |
 
 
-* Other dataset
+* Other Datasets
 
 | Type | File | Note | Link |
 |------------|--------|---------|------|
