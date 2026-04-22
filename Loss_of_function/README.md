@@ -100,7 +100,7 @@ Genes were categorized based on pLoF variant patterns:
 - **Homozygous**  
 - **Compound heterozygous**  
 
-![demo](pLoF.classification.png)
+![Gene classification by pLoF status](pLoF.classification.jpg)
 
 Compound category was further divided into:
 
