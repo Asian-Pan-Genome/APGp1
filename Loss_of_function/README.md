@@ -1,4 +1,4 @@
-# pLoF Variant Analysis Pipeline
+# pLoF Variant Analysis
 
 ## Overview
 This repository provides a reproducible pipeline for identifying and analyzing **putative loss-of-function (pLoF) variants** using both **pangenome graph-based** and **NGS-based** approaches. The workflow includes variant normalization, functional annotation, benchmarking, and downstream gene-level analyses.
