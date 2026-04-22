@@ -18,7 +18,7 @@ This repository includes the commands and workflows in pangenome graph analysis,
 
 
 
-All the related pangenome graphs are available at the APG [portal]().
+> All the related pangenome graphs are available at the APG [portal]().
 
 ## Graph comparison 
 
