@@ -16,7 +16,9 @@ This repository includes the commands and workflows in pangenome graph analysis,
 
 ### Minigraph (MG) graph
 
+```bash
 minigraph -cxggs -t${threads} $ref $asms
+```
 
 > All the related pangenome graphs are available at the APG [portal]().
 
