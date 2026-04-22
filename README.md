@@ -1,9 +1,9 @@
 # Asian Pan-Genome project phase 1
 <img src="Docs/APG_logo.png" alt="APG Project Logo" style="zoom:1%;" />
 
-Welcome to the repository for APG Phase 1 (APGp1).
+Welcome to the repository for APG phase 1 (APGp1).
 
-In this phase, we have generated 320 de novo near-T2T assemblies from 160 East Asian (EAS) individuals. Detailed sequencing information for each individual is available in [`APGp1_metadata.csv`](APGp1_metadata.csv).
+In phase 1, we generated 320 *de novo* near-T2T assemblies from 160 East Asian (EAS) individuals. Detailed meta-information for each individual with all private identifiers removed, can be found in [`APGp1_metadata.csv`](APGp1_metadata.csv).
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@ In this phase, we have generated 320 de novo near-T2T assemblies from 160 East A
     + [Pangenome Graph](#pangenome-graphs)
     + [Other Datasets](#liftover-resources)
     + [External Datasets](#external-datasets-used-in-this-study)
-  * [Companion Papers & Specialized Repositories](#companion-papers--specialized-repositories)
+  * [Companion Papers & Repositories](#companion-papers--specialized-repositories)
   * [Contact](#contact)
 
 
@@ -52,7 +52,7 @@ Each folder contains its own `README.md` with detailed input/output specificatio
 
 Annotations are available for each APGp1 assembly.
 
-| Annotation type | Format | Description |
+| Type | Format | Description |
 |-----------------|--------|-------------|
 | [Repeat elements](https://genome.zju.edu.cn/APG/Resources#TE) | GFF | RepeatMasker annotation including SINE, LINE, LTR, etc. |
 | [Centromeric satellite arrays](https://genome.zju.edu.cn/APG/Resources#CenSat) | BED | Pericentromeric and centromeric satellite annotation |
