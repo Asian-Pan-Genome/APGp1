@@ -3,7 +3,7 @@
 This repository includes the commands and workflows in pangenome graph analysis, including construction, comparison, and mapping.
 
 
-** Graph construction**
+** Graph construction **
 * Minigraph-Cactus (MC) graph
 
 
@@ -14,8 +14,8 @@ This repository includes the commands and workflows in pangenome graph analysis,
 
 All the related pangenome graphs are available at the APG [portal]().
 
-** Graph comparison**
+** Graph comparison **
 
 
-** Graph mapping**
+** Graph mapping **
 * NGS mapping from multiple ancestries.
