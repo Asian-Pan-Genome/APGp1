@@ -36,7 +36,7 @@ Each folder contains its own `README.md` with detailed input/output specificatio
 
 ## Resources
 
-### Sequencing reads and assembly
+### Sequencing reads and assemblies
 | Data type | Accession |
 |-----------|-----------|
 | BioProject | [PRJCA030428](https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA030428) |
