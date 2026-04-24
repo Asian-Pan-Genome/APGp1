@@ -14,7 +14,7 @@ We conducted the SV merging at the caller level then followed by the individual 
 
 #### SV decomposition and merging from Pangraph
 
-We used a novel pipelien to conduct the SV decomposition and merging from Pangraph, you can checek the details in this repo (https://github.com/Asian-Pan-Genome/PanSVMerger)
+We used a novel pipelien to conduct the SV decomposition and merging from Pangraph, you can check the details in this repo (https://github.com/Asian-Pan-Genome/PanSVMerger)
 
 
 
