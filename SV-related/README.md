@@ -58,12 +58,29 @@ python3 src/vcf2bed.py truvari_bench/fp.vcf.gz | cut -f 1-5 > asmsv.specific.sit
 python3 src/query_AF.py  ../../asm.sv.sort.vcf.bed asmsv.specific.site > asmsv.specific.vcf.bed
 ```
 
+
+#### Population-specific SVs
+Two types "specific SVs" were calculated:
+1. Population-specific SV records, that is, the SV sites are private to the population.
+```shell
+python src/find_APG_specific_sv_records.py id.list graph.SVs.merge.vcf.gz
+```
+Here one should provide a list file (tab-delimited) as: `sample_id\tsource\tpop`, where `source` could be APGp1, HPRCy1, HGSVC3, et al. 
+
+
+2. Population-specific SV alleles, that is, the population harbors specific SV alleles in shared/common SV records.
+```shell
+python src/find_APG_specific_sv_alleles_from_shared_sv_records.py id.list graph.SVs.merge.vcf.gz
+```
+Here, this script only report the SV records containing APGp1 private alleles.
+
+
+
 #### Population-stratified SVs
 To quantify SVs exhibiting population stratification, we calculated the [Hudson Fixation Index (Hudson Fst)](https://doi.org/10.1093/genetics/132.2.583) among populations using allele frequency per SV site (see details in the paper).
 ```shell
 python src/get_allele_per_pos_for_per_sample_from_vcf.py graph.SVs.merge.vcf graph.SVs.merge
 
-# Here one should provide a list file (tab-delimited) as: `sample_id\tsource\tpop`, where `source` could be APGp1, HPRCy1, HGSVC3, et al. 
 # One should edit the script to work with their data. Here, we just calculate HFst comparing APGp1 samples with others.
 python src/calculating_fst_from_vcf_bed.py graph.SVs.merge.vcf.bed id.list graph.SVs.merge.vcf.bed
 ```
