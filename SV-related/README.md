@@ -58,3 +58,16 @@ python3 src/vcf2bed.py truvari_bench/fp.vcf.gz | cut -f 1-5 > asmsv.specific.sit
 python3 src/query_AF.py  ../../asm.sv.sort.vcf.bed asmsv.specific.site > asmsv.specific.vcf.bed
 ```
 
+#### Population-stratified SVs
+To quantify SVs exhibiting population stratification, we calculated the [Hudson Fixation Index (Hudson Fst)](https://doi.org/10.1093/genetics/132.2.583) among populations using allele frequency per SV site (see details in the paper).
+```shell
+python src/get_allele_per_pos_for_per_sample_from_vcf.py graph.SVs.merge.vcf graph.SVs.merge
+
+# Here one should provide a list file (tab-delimited) as: `sample_id\tsource\tpop`, where `source` could be APGp1, HPRCy1, HGSVC3, et al. 
+# One should edit the script to work with their data. Here, we just calculate HFst comparing APGp1 samples with others.
+python src/calculating_fst_from_vcf_bed.py graph.SVs.merge.vcf.bed id.list graph.SVs.merge.vcf.bed
+```
+The resulting file `graph.SVs.merge.vcf.bed.tsv` could be used for prioritizing SVs to check population differentiation.
+
+
+
