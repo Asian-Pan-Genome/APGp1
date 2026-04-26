@@ -22,12 +22,13 @@ This GitHub repository primarily contains the analytical scripts and pipelines u
 
 including:
 1. [Genome_assembly](https://github.com/Asian-Pan-Genome/APGp1/tree/main/assembly) - Genome assembly, gap-filling, polishing
-2. [Annotation](https://github.com/Asian-Pan-Genome/APGp1/tree/main/annotation) - Repeatome, centromere, rDNA, gene annotation 
-3. [SV](https://github.com/Asian-Pan-Genome/APGp1/tree/main/SV-related) — SV decomposition (PanSVMerger), merging, comparison
-4. [Pangenome_graph](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Graph) — Graph construction, comparison, mapping
-5. [Loss_of_function](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Loss_of_function) — pLoF annotation and phasing
-6. [Inversions](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Inversions) — Large inversion detection
-7. [Complex_loci](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Complex_loci) — MHC and SMN structural haplotyping
+2. [QC](https://github.com/Asian-Pan-Genome/APGp1/tree/main/qc) - Basic stats, QV, GCI, flagger, etc.
+3. [Annotation](https://github.com/Asian-Pan-Genome/APGp1/tree/main/annotation) - Repeatome, centromere, rDNA, gene annotation 
+4. [SV](https://github.com/Asian-Pan-Genome/APGp1/tree/main/SV-related) — SV decomposition (PanSVMerger), merging, comparison
+5. [Pangenome_graph](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Graph) — Graph construction, comparison, mapping
+6. [Loss_of_function](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Loss_of_function) — pLoF annotation and phasing
+7. [Inversions](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Inversions) — Large inversion detection
+8. [Complex_loci](https://github.com/Asian-Pan-Genome/APGp1/tree/main/Complex_loci) — MHC and SMN structural haplotyping
 
 Each folder contains its own `README.md` with detailed input/output specifications.
 
