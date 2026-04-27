@@ -30,5 +30,8 @@ MC graph was used for identifying the complex loci in the MHC region, where SVs 
 
 
 ### MICA/B
+<img width="559" height="827" alt="image" src="https://github.com/user-attachments/assets/a64e7cfd-da8c-434c-9445-b2ddee75b484" />
 
 #### Structural haplotypes
+<img width="870" height="607" alt="image" src="https://github.com/user-attachments/assets/bfbcd367-5927-477e-aa36-7398ae917818" />
+
