@@ -43,7 +43,7 @@ echo ${sample}_${hap}.${version}.complete.chrs done!
 
 # compleasm --> ${sample}_${hap}.${version}.compleasm
 compleasm run -a $asm -o compleasm_${hap}.${version} -t $threads -l primates \
-              -L src/compleasm_lineages_library/mb_downloads/
+              -L $LIBRARY_PATH
 
 S_p=`grep "S:" compleasm_${hap}.${version}/summary.txt | cut -d '%' -f 1 | cut -d ':' -f 2`
 S_n=`grep "S:" compleasm_${hap}.${version}/summary.txt | cut -d ' ' -f 2`
