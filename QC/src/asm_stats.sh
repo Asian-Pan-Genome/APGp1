@@ -69,7 +69,7 @@ cdna=src/Homo_sapiens.GRCh38.cdna.all.fa.gz
 minimap2 -cxsplice:hq -t $threads $asm $cdna > ${sample}_${hap}.${version}.cdna.paf
 
 
-paftools.js asmgene -a src/ref.cdna.paf ${sample}_${hap}.${version}.cdna.paf > ${sample}_${hap}.${version}.chm13.asmgene
+paftools.js asmgene -a src/CHM13v2.cdna.paf ${sample}_${hap}.${version}.cdna.paf > ${sample}_${hap}.${version}.chm13.asmgene
 
 full_sgl_ref=`grep "full_sgl" ${sample}_${hap}.${version}.chm13.asmgene | cut -f 3`
 full_sgl_asm=`grep "full_sgl" ${sample}_${hap}.${version}.chm13.asmgene | cut -f 4`
