@@ -68,18 +68,18 @@ Annotations are available for each APGp1 assembly.
 
 | Dataset | Method | Version | Reference | Haplotype size | Size (Gb) | Note |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| APGp1 | MC | 6.1.0 | T2T-CN1 | 320 | 3.418 | [access](https://genome.zju.edu.cn/APG/Resources#graphs)|
-| APGp1 | MC | 6.1.0 | T2T-CHM13 | 320 | 3.429 |[access](https://genome.zju.edu.cn/APG/Resources#graphs) |
-| APGp1 + HPRCy1 + HGSVC3 | MC | 6.1.0 | T2T-CN1 | 540 | 3.608 |[access](https://genome.zju.edu.cn/APG/Resources#graphs) |
-| APGp1 + HPRCy1 + HGSVC3 | MC | 6.1.0 | T2T-CHM13 | 540 | 3.621 | [access](https://genome.zju.edu.cn/APG/Resources#graphs)|
-| APGp1 | MG | 0.21-r606 | T2T-CN1 | 320 | 3.594 | [access](https://genome.zju.edu.cn/APG/Resources#graphs)|
-| APGp1 | MG | 0.21-r606 | T2T-CHM13 | 320 | 3.548 |[access](https://genome.zju.edu.cn/APG/Resources#graphs) |
-| APGp1 + HPRCy1 + HGSVC3 | MG | 0.21-r606 | T2T-CN1 | 540 | 3.904 | [access](https://genome.zju.edu.cn/APG/Resources#graphs)|
-| APGp1 + HPRCy1 + HGSVC3 | MG | 0.21-r606 | GRCh38 | 540 | 3.397 |[access](https://genome.zju.edu.cn/APG/Resources#graphs) |
-| HPRCy1 | MG | 0.21-r606 | T2T-CHM13 | 94 | 3.333 |[access](https://genome.zju.edu.cn/APG/Resources#graphs) |
-| HGSVC3 | MG | 0.21-r606 | T2T-CHM13 | 130 | 3.402 |[access](https://genome.zju.edu.cn/APG/Resources#graphs) |
-| HPRCy1eas-HGSVC3eas | MG | 0.21-r606 | T2T-CHM13 | 30 | 3.183 | [access](https://genome.zju.edu.cn/APG/Resources#graphs)|
-| HPRCy1eas-HGSVC3eas | MC | 2.1.1 | T2T-CN1 | 30 | 3.202 | [access](https://genome.zju.edu.cn/APG/Resources#graphs)|
+| APGp1 | MC | 6.1.0 | T2T-CN1 | 320 | 3.418 | [access]([https://genome.zju.edu.cn/APG/Resources#graphs](https://genome.zju.edu.cn/APG/graph/))|
+| APGp1 | MC | 6.1.0 | T2T-CHM13 | 320 | 3.429 |[access]([https://genome.zju.edu.cn/APG/Resources#graphs](https://genome.zju.edu.cn/APG/graph/)) |
+| APGp1 + HPRCy1 + HGSVC3 | MC | 6.1.0 | T2T-CN1 | 540 | 3.608 |[access]([https://genome.zju.edu.cn/APG/Resources#graphs](https://genome.zju.edu.cn/APG/graph/)) |
+| APGp1 + HPRCy1 + HGSVC3 | MC | 6.1.0 | T2T-CHM13 | 540 | 3.621 | [access]([https://genome.zju.edu.cn/APG/Resources#graphs](https://genome.zju.edu.cn/APG/graph/))|
+| APGp1 | MG | 0.21-r606 | T2T-CN1 | 320 | 3.594 | [access]([https://genome.zju.edu.cn/APG/Resources#graphs](https://genome.zju.edu.cn/APG/graph/))|
+| APGp1 | MG | 0.21-r606 | T2T-CHM13 | 320 | 3.548 |[access]([https://genome.zju.edu.cn/APG/Resources#graphs](https://genome.zju.edu.cn/APG/graph/)) |
+| APGp1 + HPRCy1 + HGSVC3 | MG | 0.21-r606 | T2T-CN1 | 540 | 3.904 | [access]([https://genome.zju.edu.cn/APG/Resources#graphs](https://genome.zju.edu.cn/APG/graph/))|
+| APGp1 + HPRCy1 + HGSVC3 | MG | 0.21-r606 | GRCh38 | 540 | 3.397 |[access]([https://genome.zju.edu.cn/APG/Resources#graphs](https://genome.zju.edu.cn/APG/graph/)) |
+| HPRCy1 | MG | 0.21-r606 | T2T-CHM13 | 94 | 3.333 |[access]([https://genome.zju.edu.cn/APG/Resources#graphs](https://genome.zju.edu.cn/APG/graph/)) |
+| HGSVC3 | MG | 0.21-r606 | T2T-CHM13 | 130 | 3.402 |[access]([https://genome.zju.edu.cn/APG/Resources#graphs](https://genome.zju.edu.cn/APG/graph/)) |
+| HPRCy1eas-HGSVC3eas | MG | 0.21-r606 | T2T-CHM13 | 30 | 3.183 | [access]([https://genome.zju.edu.cn/APG/Resources#graphs](https://genome.zju.edu.cn/APG/graph/))|
+| HPRCy1eas-HGSVC3eas | MC | 2.1.1 | T2T-CN1 | 30 | 3.202 | [access]([https://genome.zju.edu.cn/APG/Resources#graphs](https://genome.zju.edu.cn/APG/graph/))|
 | CPC* | MC | 2.1.1 | T2T-CHM13 | 124 | 3.285 | [Gao et al., 2023](https://pog.fudan.edu.cn/cpc/download//CPC.Phase1.CHM13v2-full/CPC.Phase1.CHM13v2-full.gfa.gz) |
 | HPRCy1* | MC | NA | T2T-CHM13 | 95 | 3.338 | [Liao et al., 2023](https://s3-us-west-2.amazonaws.com/human-pangenomics/pangenomes/freeze/freeze1/minigraph-cactus/hprc-v1.1-mc-chm13/hprc-v1.1-mc-chm13.gfa.gz) |
 | CPC-HPRCy1* | MC | 2.1.1 | T2T-CHM13 | 212 | 3.510 | [Gao et al., 2023](https://pog.fudan.edu.cn/cpc/download//CPC.HPRC.Phase1.CHM13v2/CPC.HPRC.Phase1.CHM13v2.gfa.gz) |
