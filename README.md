@@ -107,19 +107,19 @@ Annotations are available for each APGp1 assembly.
 
 | Type | File | Note | Link |
 |------------|--------|---------|------|
-| Chain | CN1v1.0_hap_To_CHM13v2.0.over.chain.gz | T2T-CN1 v1.0 → T2T-CHM13 v2.0 | [Download]() |
-| Chain | CN1v1.0_hap_To_GRCh38.p14.over.chain.gz | T2T-CN1 v1.0 → GRCh38.p14 | [Download]() |
-| Chain | CHM13v2.0_To_CN1v1.0_hap.over.chain.gz | T2T-CHM13 v2.0 → T2T-CN1 v1.0 | [Download]() |
-| Chain | GRCh38.p14_To_CN1v1.0_hap.over.chain.gz | GRCh38.p14 → T2T-CN1 v1.0 | [Download]() |
-| Region | CN1v1_Easy_region.bed | Easy region in T2T-CN1 | [Download]() |
-| Region | CN1v1_CMRG_region.bed | CMRG region in T2T-CN1 | [Download]() |
-| Region | CN1v1_SD_region.bed | SD region in T2T-CN1 | [Download]() |
-| Region | CN1v1_rDNA_region.bed | rDNA arrays in T2T-CN1 | [Download]() |
-| Region | CN1v1_Centromere_region.bed | Centromere regions in T2T-CN1 | [Download]() |
-| Region | CN1v1_CentromerePlus_region.bed | Centromere+5Mb regions in T2T-CN1 | [Download]() |
-| Region | CN1v1_MHC_region.bed | MHC in T2T-CN1 | [Download]() |
-| Region | CN1v1.0_haploid.RM.out.gff | TE annotation in T2T-CN1 by Repeatmasker | [Download]() |
-| Region | CN1v1_VNTR_STR.anno | VNTR/STR in T2T-CN1 | [Download]() |
+| Chain | CN1v1.0_hap_To_CHM13v2.0.over.chain.gz | T2T-CN1 v1.0 → T2T-CHM13 v2.0 | [Download](https://genome.zju.edu.cn/APG/download/) |
+| Chain | CN1v1.0_hap_To_GRCh38.p14.over.chain.gz | T2T-CN1 v1.0 → GRCh38.p14 | [Download](https://genome.zju.edu.cn/APG/download/) |
+| Chain | CHM13v2.0_To_CN1v1.0_hap.over.chain.gz | T2T-CHM13 v2.0 → T2T-CN1 v1.0 | [Download](https://genome.zju.edu.cn/APG/download/) |
+| Chain | GRCh38.p14_To_CN1v1.0_hap.over.chain.gz | GRCh38.p14 → T2T-CN1 v1.0 | [Download](https://genome.zju.edu.cn/APG/download/) |
+| Region | CN1v1_Easy_region.bed | Easy region in T2T-CN1 | [Download](https://genome.zju.edu.cn/APG/download/) |
+| Region | CN1v1_CMRG_region.bed | CMRG region in T2T-CN1 | [Download](https://genome.zju.edu.cn/APG/download/) |
+| Region | CN1v1_SD_region.bed | SD region in T2T-CN1 | [Download](https://genome.zju.edu.cn/APG/download/) |
+| Region | CN1v1_rDNA_region.bed | rDNA arrays in T2T-CN1 | [Download](https://genome.zju.edu.cn/APG/download/) |
+| Region | CN1v1_Centromere_region.bed | Centromere regions in T2T-CN1 | [Download](https://genome.zju.edu.cn/APG/download/) |
+| Region | CN1v1_CentromerePlus_region.bed | Centromere+5Mb regions in T2T-CN1 | [Download](https://genome.zju.edu.cn/APG/download/) |
+| Region | CN1v1_MHC_region.bed | MHC in T2T-CN1 | [Download](https://genome.zju.edu.cn/APG/download/) |
+| Region | CN1v1.0_haploid.RM.out.gff | TE annotation in T2T-CN1 by Repeatmasker | [Download](https://genome.zju.edu.cn/APG/download/) |
+| Region | CN1v1_VNTR_STR.anno | VNTR/STR in T2T-CN1 | [Download](https://genome.zju.edu.cn/APG/download/) |
 | GeneExpression | MAGE RNAseq | MAGE dataset for 1KGP | [Download](https://github.com/mccoy-lab/MAGE/) |
 
 
@@ -142,7 +142,7 @@ For specific analyses and methodologies developed during APGp1, please refer to 
 * [Y chromosome](https://github.com/Asian-Pan-Genome/APGp1-Y)  (Liu et al., unpublished)
 
 
-* [Complex regions]() (Han et al., unpublished)
+* [Complex regions](https://github.com/Hanjunmin/complex_region) (Han et al., unpublished)
 
 
 * [Tibetan pangenome](https://doi.org/10.64898/2025.12.16.694547) (He et al., 2025, bioRxiv)
