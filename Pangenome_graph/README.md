@@ -24,7 +24,10 @@ The input file `APGp1.list` contains the assembly paths, where the first column 
 #### Stability of Construction Order:
 Since the order of samples in the input list dictates the incremental construction process in `Minigraph-Cactus`, we evaluated the potential impact of sequence ordering. We performed a **permutation test** by randomly selecting 10 assemblies and shuffling their input order across 10 independent iterations. Our results indicate that while minor variations exist, the technical variance introduced by the construction order is negligible compared to other factors such as reference bias (see Figure below).
 
-![Permutation Test for Minigraph-Cactus](./PermutationTest.png)
+
+<div align="center">
+  <img src="./PermutationTest.png" width="80%">
+</div>
 
 ### Minigraph (MG) Graph
 
