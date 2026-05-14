@@ -38,37 +38,96 @@ minigraph -cxggs -t${threads} ${ref} ${asm1} ${asm2} ...
 ```
 ## Graph Evaluation
 ### Graph Quality Assessment
-This repository contains the pipelines for mapping short/long reads to the **APGp1 Minigraph-Cactus (MC)** pangenome graphs and performing graph-based small variant calling.
+This repository contains the pipelines for mapping short/long reads to the **APGp1 Minigraph-Cactus (MC)** pangenome graphs and performing graph-based small variant calling. Below is the pipeline diagram for this task.
 
-#### 1. Graph Mapping
-We utilize different aligners depending on the sequencing technology to map reads back to the pangenome graph.
-##### Short-read (NGS) Alignment
-NGS short reads were aligned to the **T2T-CN1-referenced MC graph** using `vg giraffe` (v1.56.0).
-+ **Command:**
-  ```shell
-  vg giraffe -Z ${pref}.gbz -m ${pref}.min -d ${pref}.dist \
-           -p -f ${h1} -f ${h2} -t ${threads} \
-           --sample ${sample} \
-           --read-group "ID:1 LB:lib1 SM:${sample} PL:illumina PU:unit1" \
-           -o BAM > ${sample}.bam
-  ```
-+ **Post-processing:** Reads with no alignment or an aligned fraction < 99% were filtered. For downstream variant calling, the BAM output was processed to remove the reference prefix (e.g., `CN1v1#0#`) to ensure compatibility with standard tools.
+<div align="center">
+  <img src="./Pipeline_For_GraphQualityAssessment.png" width="80%">
+</div>
 
-##### Long-read (PacBio HiFi) Alignment
-HiFi reads were aligned using `GraphAligner` (v1.0.17) with the `-x vg` preset.
+#### Read Alignment (NGS)
+This section details the workflow for mapping Next-Generation Sequencing (NGS) short reads to the APGp1 Minigraph-Cactus (MC) pangenome graph, evaluating mapping metrics, and calculating on/off-target depth distributions.
+##### 1. Pangenome Graph Mapping
+We used `vg giraffe` (v1.56.0; [Sirén et al., 2021](https://www.science.org/doi/10.1126/science.abg8871)) to map the diploid NGS short reads against the T2T-CN1-referenced APGp1 MC graph (`APGp1-MC-CN1v1.d2`).
 
-+ **Filtering Criteria:** 
-  + Keep only the highest-scoring alignment per read (based on AS value).
-  + Discard reads with < 80% length aligned.
-  + Remove alignments with MAPQ < 1.
-  + Exclude alignments with identity < 90%.
+```bash
+# Define the graph prefix
+pref="APGp1-MC-CN1v1.d2"
 
+# Perform read alignment
+vg giraffe \
+    --sample $sample \
+    --read-group "ID:1 LB:lib1 SM:"$sample" PL:illumina PU:unit1" \
+    -Z $pref.gbz -m $pref.min -d $pref.dist \
+    -p -f $h1 -f $h2 -t $thread -o gaf > $sample.ngs.gaf
+```
+##### 2. Alignment Filtering
+To ensure high-quality alignments, reads with no alignment or an aligned fraction < 100% were excluded using the custom script `GAF_Filtering_for_NGS.py`.
+```bash
+# Filter the GAF file
+python GAF_Filtering_for_NGS.py -g $sample.ngs.gaf
+```
+> **Note:** The **Aligned Ratio** (as presented in Fig. 4b) is calculated by dividing the read count in the filtered GAF by the total sequencing read count.
 
+##### 3. Bp-Level Coverage Calculation
+The filtered GAF alignments were packed to calculate the per-bp read depth across the pangenome graph.
+```bash
+# Pack the alignments into the graph
+vg pack -t 16 -a $ResultPath/$sample.ngs.gaf.filt -x $pref.gbz -o $ResultPath/$sample.filt.ngs.pack
 
+# Extract raw node depth statistics
+vg pack -t 16 -i $ResultPath/$sample.filt.ngs.pack -x $pref.gbz -d > $sample.filt.ngs.pack.stat
+```
 
+##### 4. ID Translation & Node-Level Coverage
+Due to the node chopping process during the Minigraph-Cactus graph construction, the node IDs in the `.d2.gbz` (Filt.node) and original `.gfa` (Raw.node) files differ. We first generated a translation mapping table to retain the relationship between original and chopped nodes, then calculated node-level coverage using `GFA_BinCoverage.py`.
+```bash
+# Generate the ID translation mapping file
+vg gbwt -Z $pref.gbz --translation mapping.tsv
 
-### Reference Bias Evaluation
+# Calculate bin-level coverage (e.g., Bin size = 100 bp)
+python GFA_BinCoverage.py $sample.filt.ngs.pack.stat mapping.tsv 100 $sample.filt.ngs.bin100.cov
 
+## Output format example
+# Raw.node	Filt.node	Coverage(Bin=100)	Total.Coverage	Max.Bin
+4222861	3264413	2	2	2
+5331497	4210037	30	1868	30
+9208196	7099111	0	0	0
+80027568	63834972	20	20	20
+43747204	35321148	16	16	16
+21695267	17442753	17	34	17
+42071304	33863029	17	17	17
+76250177	60660307	22,21,22	4562	22
+2413347	1934676	25	1009	25
+```
 
+##### 5. Sample Path Extraction
+Since we mapped reads from diploid samples, both Maternal and Paternal path nodes must be extracted from the graph for accurate on-target evaluation.
+```bash
+# Convert GBZ to GFA
+vg convert -f $pref.gbz --vg-algorithm > $pref.gfa
 
-### Multiple Pangenome Graphs Comparison
+# Extract sample-specific node IDs (including both haplotypes)
+name=$(echo $sample | cut -f 1 -d '-')
+cat $pref.gfa | grep '^P' | grep $name | cut -f 3 | sed 's/+\|-//g' | sed 's/,/\n/g' | sort -n > $sample.NodeId.sort.list
+```
+
+##### 6. On/Off-Target Classification & Regional Distribution
+To determine whether reads were mapped to on-target or off-target regions, we compared the node depths against the sample-specific paths. First, coordinate information was extracted from the `SN` (chromosome) and `SO` (position) tags of the `S` lines in the original GFA to create a position reference (`APGp1-MC-CN1v1.gfa.pos`).
+
+We then calculated the On-target Ratio and profiled the Off-target depths using `On-Off_Target.py`:
+```bash
+python On-Off_Target.py \
+    $sample.filt.ngs.bin100.cov \
+    $sample.NodeId.sort.list \
+    APGp1-MC-CN1v1.gfa.pos \
+    $sample.off_target.bed
+```
++ **On-Target Ratio:** Defined as the total depth of nodes present in the sample path divided by the total aligned depth.
++ **Off-Target Stratification:** The script outputs the detailed coverage of off-target nodes in BED-like format (`chro \t start \t end \t BinCov \t MaxBinCov`). These were subsequently intersected with specific genomic region definitions (e.g., Centromeres, SDs, CMRGs; provided in the `Region/` directory under T2T-CN1 coordinates).
+  + `Easy` regions represent the most unique genomic sequences in T2T-CN1, annotated by lifting over coordinates from T2T-CHM13 ‘easy’ regions by LiftOver.
+  + `Pericentromere` regions denote centromeres plus 5-Mbp flanking sequences.
+  + `Segmental duplications (SDs)` of T2T-CN1 assembly version v1.0 were annotated using the same methodology used by [Yang et al. (2023)](https://www.nature.com/articles/s41422-023-00849-5).(remove centromere, telomere, and rDNA regions) 
+  + `Low-complexity regions` were defined by the simple repeat annotation of [RepeatMasker](http://www.repeatmasker.org) (v4.1.2). 
+  + `Challenging medically relevant genes (CMRGs)`, `KIR` and `MHC` gene loci were extracted from the T2T-CN1 gene annotation file.
+
++ **Note:** Regional depth comparisons were restricted to a depth range of `0-20X`, as off-target bin coverage primarily falls within this low-depth interval.
