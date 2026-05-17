@@ -72,20 +72,20 @@ python GAF_Filtering_for_NGS.py -g $sample.ngs.gaf
 The filtered GAF alignments were packed to calculate the per-bp read depth across the pangenome graph.
 ```bash
 # Pack the alignments into the graph
-vg pack -t 16 -a $ResultPath/$sample.ngs.gaf.filt -x $pref.gbz -o $ResultPath/$sample.filt.ngs.pack
+vg pack -t 16 -a $sample.ngs.gaf.filt -x $pref.gbz -o $sample.filt.ngs.pack
 
 # Extract raw node depth statistics
-vg pack -t 16 -i $ResultPath/$sample.filt.ngs.pack -x $pref.gbz -d > $sample.filt.ngs.pack.stat
+vg pack -t 16 -i $sample.filt.ngs.pack -x $pref.gbz -d > $sample.filt.ngs.pack.stat
 ```
 
 ##### 4. ID Translation & Node-Level Coverage
-Due to the node chopping process during the Minigraph-Cactus graph construction, the node IDs in the `.d2.gbz` (Filt.node) and original `.gfa` (Raw.node) files differ. We first generated a translation mapping table to retain the relationship between original and chopped nodes, then calculated node-level coverage using `GFA_BinCoverage.py`.
+Due to the node chopping process during the Minigraph-Cactus graph construction, the node IDs in the `.d2.gbz` (Filt.node) and original `.gfa` (Raw.node) files differ. We first generated a translation mapping table to retain the relationship between original and chopped nodes, then calculated node-level coverage using `GAF_BinCoverage.py`.
 ```bash
 # Generate the ID translation mapping file
 vg gbwt -Z $pref.gbz --translation mapping.tsv
 
 # Calculate bin-level coverage (e.g., Bin size = 100 bp)
-python GFA_BinCoverage.py $sample.filt.ngs.pack.stat mapping.tsv 100 $sample.filt.ngs.bin100.cov
+python GAF_BinCoverage.py $sample.filt.ngs.pack.stat mapping.tsv 100 $sample.filt.ngs.bin100.cov
 
 ## Output format example
 # Raw.node	Filt.node	Coverage(Bin=100)	Total.Coverage	Max.Bin
@@ -120,7 +120,7 @@ python On-Off_Target.py \
     $sample.filt.ngs.bin100.cov \
     $sample.NodeId.sort.list \
     APGp1-MC-CN1v1.gfa.pos \
-    $sample.off_target.bed
+    $sample.off_target.bed # outputs the detailed coverage of off-target nodes in BED-like format
 ```
 + **On-Target Ratio:** Defined as the total depth of nodes present in the sample path divided by the total aligned depth.
 + **Off-Target Stratification:** The script outputs the detailed coverage of off-target nodes in BED-like format (`chro \t start \t end \t BinCov \t MaxBinCov`). These were subsequently intersected with specific genomic region definitions (e.g., Centromeres, SDs, CMRGs; provided in the `Region/` directory under T2T-CN1 coordinates).
@@ -131,3 +131,142 @@ python On-Off_Target.py \
   + `Challenging medically relevant genes (CMRGs)`, `KIR` and `MHC` gene loci were extracted from the T2T-CN1 gene annotation file.
 
 + **Note:** Regional depth comparisons were restricted to a depth range of `0-20X`, as off-target bin coverage primarily falls within this low-depth interval.
+
+
+#### Read Alignment (PacBio HiFi)
+
+This section outlines the workflow for mapping PacBio HiFi long reads to the pangenome graph, followed by alignment filtering and edge-based on-target rate evaluation.
+
+##### 1. Long-Read Mapping
+
+We utilized `GraphAligner` (v1.0.17; [Rautiainen et al., 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7513500/)) to map the PacBio HiFi reads against the original GFA format of the pangenome graph (`$pref.gfa`). All filtered FASTQ files for a given sample were passed as input.
+
+```bash
+# Define the graph prefix
+pref="APGp1-MC-CN1v1.d2"
+
+# Perform long-read alignment using GraphAligner
+GraphAligner -g $pref.gfa \
+    $(for i in `ls $CCSpath/*.filt.fastq.gz`; do echo "-f ${i} "; done) \
+    -a $sample.hifi.gaf -x vg -t $thread
+```
+
+##### 2. Alignment Filtering
+
+To retain only high-confidence long-read alignments, we applied custom filtering criteria using the `GAF_Filtering_for_HiFi.py` script.
+
+```bash
+# Filter the raw HiFi GAF file
+python GAF_Filtering_for_HiFi.py -g $sample.hifi.gaf
+```
+Low-quality HiFi alignments were filtered using:
++ keeping only the highest-scoring alignment per read (based on AS value)
++ discarding reads with <80% length aligned to the graph
++ removing alignments with MAPQ < 1
++ excluding alignments with identity <90%
+
+##### 3. Edge-Level Coverage Calculation
+
+Unlike the short-read pipeline which evaluates node-level coverage, the continuous nature of long reads makes them highly suitable for evaluating traversing edges. We used `vg pack` to extract edge coverage statistics from the filtered alignments.
+
+```bash
+# Pack the filtered long-read alignments into the graph
+vg pack -x $pref.gbz -t 16 -a $sample.hifi.gaf.filt -o $sample.filt.hifi.pack
+
+# Extract edge coverage statistics (-D flag)
+vg pack -x $pref.gbz -t 16 -i $sample.filt.hifi.pack -D > $sample.filt.hifi.pack.edge.stat.txt
+```
+
+##### 4. On-Target Rate Evaluation
+
+To determine the on-target mapping rate for long reads, we evaluated whether the alignments successfully traversed edges that belong to the specific sample's path.
+
+An alignment depth (edge coverage) is considered "on-target" only if both the starting node (`from_node`) and the ending node (`to_node`) of the edge are present in the sample's pre-extracted path list. The core logic for this calculation is implemented in Python as follows:
+
+```python
+# Core logic for evaluating HiFi on-target rate based on edge traversal
+True_depth = 0
+total_depth = 0
+
+with rich.progress.open(DepthFile, "r") as f:
+    next(f) # Skip header line
+    for line in f:
+        fields = line.strip('\n').split('\t')
+        from_node = int(fields[0])
+        to_node = int(fields[2])
+        edgeCov = int(fields[4]) # Edge coverage depth
+        
+        # Check if both nodes connecting the edge belong to the sample path
+        if path[from_node] == 1 and path[to_node] == 1:
+            True_depth += edgeCov      
+        total_depth += edgeCov
+
+# Final on-target ratio
+ratio = True_depth / total_depth
+```
+
+> **Note:** The `path` dictionary or array must be pre-loaded using the `$sample.NodeId.sort.list` extracted during the NGS workflow preparation.
+
+
+#### Graph-based Small Variant Calling
+
+This section describes the parallel workflows for identifying variants from the pangenome graph topology versus NGS short reads mapped to the graph, followed by their standardization and comparison.
+
+###### 1. Pangenome-Decoded Variants (Graph-derived)
+
+Variant sites embedded within the Minigraph-Cactus (MC) graph are decomposed, normalized to bi-allelic records, and merged into diploid genotypes.
+
+```bash
+# Deconstruct graph topology to identify variant sites
+vg deconstruct -p $pref.gbz ... > multi_sample.vcf
+
+# Extract sample-specific variants and split multi-allelic records
+bcftools view -a -l -s $sample multi_sample.vcf | \
+bcftools norm -m -any -o $sample.decoded.vcf
+
+```
+
+##### 2. NGS Graph-Based Call Set (DeepVariant)
+
+Short reads are mapped to the graph to output alignments in BAM format, which are then processed via DeepVariant using specific graph-compatible configurations. (See details in `GraphMapping_and_VariantCalling.sh`)
+
+```bash
+# Map short reads using vg giraffe to output BAM format
+vg giraffe -Z $pref.gbz -m $pref.min -d $pref.dist -p -f $h1 -f $h2 -t $thread -o BAM > $sample.bam
+
+# Clean graph-specific prefix tags (e.g., CN1v1#0#), sort, and index
+samtools view -h $sample.bam | sed -e "s/CN1v1#0#//g" | samtools sort --thread $thread -O BAM > $sample.sort.bam
+samtools index -@ $thread $sample.sort.bam
+rm $sample.bam
+
+# Call small variants via Singularity DeepVariant
+singularity run -B $DATA:$DATA $DeepVariantPath \
+  /opt/deepvariant/bin/run_deepvariant \
+  --model_type WGS \
+  --ref $REF \
+  --reads $ResultPath/$sample.sort.bam \
+  --output_vcf $ResultPath/$sample.vcf.gz \
+  --output_gvcf $ResultPath/$sample.g.vcf.gz \
+  --make_examples_extra_args="min_mapping_quality=1,keep_legacy_allele_counter_behavior=true,normalize_reads=true" \
+  --num_shards 32
+
+# Hard filter: Retain 'PASS' and non-reference loci, exclude chrM and 0/0
+zcat $ResultPath/$sample.vcf.gz | grep -v '#' | grep 'PASS' | grep -v 'chrM' | grep -v '0/0' > $sample.ngs.filt.vcf
+
+```
+
+#### 3. Regional Exclusion and Call Set Comparison
+
+Both call sets are converted to BED format, extended by the maximal allele length, and filtered to exclude highly-repetitive complex regions before intersection.
+
+```bash
+# [Step A] Convert both VCFs to BED format: chr \t start \t end+max_allele_len
+
+# [Step B] Exclude complex repetitive regions (centromeres, rDNA, and telomeres)
+bedtools intersect -v -a $sample.decoded.bed -b complex_region.bed > $sample.decoded.clean.bed
+bedtools intersect -v -a $sample.ngs.filt.bed -b complex_region.bed > $sample.ngs.clean.bed
+
+# [Step C] Evaluate concordance between the two call sets
+bcftools intersect $sample.decoded.clean.bed $sample.ngs.clean.bed ...
+
+```
