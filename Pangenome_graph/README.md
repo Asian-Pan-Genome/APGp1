@@ -3,6 +3,35 @@
 This repository includes the commands and workflows in pangenome graph analysis, including `construction` and `evaluation` (**graph quality assessment, reference bias evaluation and multiple pangenome graphs comparison**).
 
 
+- [Graph Construction and Evaluation](#graph-construction-and-evaluation)
+  - [Graph Construction](#graph-construction)
+    - [Minigraph-Cactus (MC) Graph](#minigraph-cactus-mc-graph)
+      - [Stability of Construction Order:](#stability-of-construction-order)
+    - [Minigraph (MG) Graph](#minigraph-mg-graph)
+  - [Graph Evaluation](#graph-evaluation)
+    - [Graph Quality Assessment](#graph-quality-assessment)
+      - [Read Alignment (NGS)](#read-alignment-ngs)
+        - [1. Pangenome Graph Mapping](#1-pangenome-graph-mapping)
+        - [2. Alignment Filtering](#2-alignment-filtering)
+        - [3. Bp-Level Coverage Calculation](#3-bp-level-coverage-calculation)
+        - [4. ID Translation \& Node-Level Coverage](#4-id-translation--node-level-coverage)
+        - [5. Sample Path Extraction](#5-sample-path-extraction)
+        - [6. On/Off-Target Classification \& Regional Distribution](#6-onoff-target-classification--regional-distribution)
+      - [Read Alignment (PacBio HiFi)](#read-alignment-pacbio-hifi)
+        - [1. Long-Read Mapping](#1-long-read-mapping)
+        - [2. Alignment Filtering](#2-alignment-filtering-1)
+        - [3. Edge-Level Coverage Calculation](#3-edge-level-coverage-calculation)
+        - [4. On-Target Rate Evaluation](#4-on-target-rate-evaluation)
+      - [Graph-based Small Variant Calling](#graph-based-small-variant-calling)
+          - [1. Pangenome-Decoded Variants (Graph-derived)](#1-pangenome-decoded-variants-graph-derived)
+        - [2. NGS Graph-Based Call Set (DeepVariant)](#2-ngs-graph-based-call-set-deepvariant)
+        - [3. Regional Exclusion and Call Set Comparison](#3-regional-exclusion-and-call-set-comparison)
+    - [Reference Bias Evaluation](#reference-bias-evaluation)
+    - [Multiple Pangenome Graphs Comparison](#multiple-pangenome-graphs-comparison)
+      - [1. Evaluation Metrics \& Benchmarking](#1-evaluation-metrics--benchmarking)
+      - [2. Comparative Performance Benchmarking](#2-comparative-performance-benchmarking)
+
+
 ## Graph Construction
 
 Multiple graphs are built from different assemblies using multiple reference backbones (T2T-CHM13, T2T-CN1 and GRCh38) using two methods. All the related pangenome graphs are available at the APG [portal](https://github.com/Asian-Pan-Genome/APGp1#pangenome-graphs)
@@ -228,7 +257,7 @@ bcftools norm -m -any -o $sample.decoded.vcf
 
 ##### 2. NGS Graph-Based Call Set (DeepVariant)
 
-Short reads are mapped to the graph to output alignments in BAM format, which are then processed via DeepVariant using specific graph-compatible configurations. (See details in `GraphMapping_and_VariantCalling.sh`)
+Short reads are mapped to the graph to output alignments in BAM format, which are then processed via DeepVariant using specific graph-compatible configurations. (See details in `GraphMapping_and_VariantCalling.sh`.)
 
 ```bash
 # Map short reads using vg giraffe to output BAM format
@@ -255,7 +284,7 @@ zcat $ResultPath/$sample.vcf.gz | grep -v '#' | grep 'PASS' | grep -v 'chrM' | g
 
 ```
 
-#### 3. Regional Exclusion and Call Set Comparison
+##### 3. Regional Exclusion and Call Set Comparison
 
 Both call sets are converted to BED format, extended by the maximal allele length, and filtered to exclude highly-repetitive complex regions before intersection.
 
@@ -270,3 +299,61 @@ bedtools intersect -v -a $sample.ngs.filt.bed -b complex_region.bed > $sample.ng
 bcftools intersect $sample.decoded.clean.bed $sample.ngs.clean.bed ...
 
 ```
+
+### Reference Bias Evaluation
+This section evaluates reference bias by classifying variation types and comparing pangenome-decoded variants from different reference backbones (e.g., T2T-CN1 vs. T2T-CHM13).
+
+Variants decomposed from the graphs are classified into four types using `Classification_Variants.py`. Conflicting annotations are resolved based on priority: **SNP > SV > MNP > InDel**.
+```bash
+# Prepare a tab-delimited input from VCF containing REF and ALT columns:
+# Format: REF \t ALT (e.g., A \t G,C)
+# Run the classification script
+python Classification_Variants.py $sample.variants.txt
+```
+**Classification Criteria & Priorities:**
++ **SNP** (`0`): Length of both REF and ALT alleles equals 1. (Priority 1)
++ **SV** (`3`): Maximal allele length (REF or ALT) $\ge$ 50 bp. (Priority 2)
++ **MNP** (`1`): All alternative alleles have equal lengths to REF, with length > 1. (Priority 3)
++ **InDel** (`2`): Length of alleles varies, with maximal length < 50 bp. (Priority 4)
+
+*Output Format*: `Bi_or_Multi_Allele \t Variant_Type` (e.g., `0 \t 0` for bi-allelic SNP).
+
+### Multiple Pangenome Graphs Comparison
+This section evaluates and compares the mapping performance of six different Minigraph-Cactus (MC) pangenome graphs across 51 HGDP populations (stratified into 7 continental groups: AFR, EUR, ME, SAS, EAS, OCE, AMR).
+
+#### 1. Evaluation Metrics & Benchmarking
+
+We designed three distinct metrics to capture alignment efficiency, structural trade-offs, and downstream utility:
+
+* **Mapping Rate (MR):** Reflects overall alignment efficiency. Highly sensitive to graph complexity; streamlined graphs (e.g., filtered for rare alleles) optimize MR by reducing ambiguous routing.
+* **Perfect Mapping Rate (PMR):** Measures exact sequence homology. Quantifies the graph's capacity to retain complete, fine-scale local haplotypes.
+* **High-Confidence Mapping Rate (HCMR):** Bridges the gap between efficiency and absolute identity. Serves as a pragmatic metric for robust mappability and functional utility in downstream variant calling.
+
+```markdown
+# [Metric Thresholds & Calculation Summary]
+
+- PMR: Reads mapping entirely to a specific path with 0 mismatches and 0 indels.
+       Calculated directly via: `vg stats -a sample.gam`
+       
+- HCMR: Reads satisfying: Aligned fraction > 95% AND Match fraction > 95% AND MAPQ ≥ 30.
+
+- MR: Overall aligned reads divided by total sequencing dataset.
+
+```
+
+#### 2. Comparative Performance Benchmarking
+<div align="center">
+  <img src="./Multiple_PangenomeGraphs_Comparison.png" width="90%">
+</div>
+The comparative benchmarking results across multiple pangenome graphs are visualized in the repository's supplementary figures, using the following baseline and normalization logic:
+
+* **Baseline:** Performance values are normalized against the **`HPRCy1.CHM13.d9`** graph (indicated by the horizontal dashed baseline).
+* **Exceeding Baseline:** Asterisks ($\star$) mark populations with performance exceeding the baseline, with colors indicating the corresponding top-performing graph.
+
+**Evaluated Graphs & Frequency Filtration Levels ('d' suffix):**
+
++ **d2**: Allele Count (AC) $\ge$ 2.
++ **d9 / d12**: Study-specific filtration thresholds adopted from HPRC ([Liao et al., 2023](https://www.nature.com/articles/s41586-023-05896-x)) and CPC ([Gao et al., 2023](https://www.nature.com/articles/s41586-023-06173-7)).
++ **d32 / d54**: Allele Frequency (AF) $\ge$ 10% across all APGp1 assemblies ($n=320$) or integrated Global assemblies ($n=540$, combining APGp1, HPRCy, and HGSVC3).
+
+>  The dN filtering pipeline is shown in the `Graph_dN_filter.sh` script.
