@@ -30,6 +30,7 @@ This repository includes the commands and workflows in pangenome graph analysis,
     - [Multiple Pangenome Graphs Comparison](#multiple-pangenome-graphs-comparison)
       - [1. Evaluation Metrics \& Benchmarking](#1-evaluation-metrics--benchmarking)
       - [2. Comparative Performance Benchmarking](#2-comparative-performance-benchmarking)
+  - [Contact](#contact)
 
 
 ## Graph Construction
@@ -357,3 +358,6 @@ The comparative benchmarking results across multiple pangenome graphs are visual
 + **d32 / d54**: Allele Frequency (AF) $\ge$ 10% across all APGp1 assemblies ($n=320$) or integrated Global assemblies ($n=540$, combining APGp1, HPRCy, and HGSVC3).
 
 >  The dN filtering pipeline is shown in the `Graph_dN_filter.sh` script.
+
+## Contact
+Please raise issues on this Github repository concerning this dataset. For more informtion, please contact Mingyu Suo (Zhejiang University) at suomingyu@zju.edu.cn or Dongya Wu (Zhejiang University) at wudongya@zju.edu.cn .
