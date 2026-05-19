@@ -59,7 +59,7 @@ Annotations are available for each APGp1 assembly.
 | [Centromeric HORs](https://genome.zju.edu.cn/APG/annotation/) | BED | Centromeric high-order-repeat annotation |
 | [rDNA arrays](https://github.com/Asian-Pan-Genome/APGp1/tree/main/annotation/rDNA/data) | BED, FASTA | rDNA regions and individual rDNA copy sequences |
 | [Protein-coding genes](https://genome.zju.edu.cn/APG/annotation/) | GFF.gz | Liftoff + Exonerate + Augustus merged annotation |
-| [HLA and C4 genes]() | GFF | Annotated using Immuannot |
+| [HLA and C4 genes](https://genome.zju.edu.cn/APG/files/download/APGp1/HLA_annotation.tar.gz) | GFF | Annotated using Immuannot |
 | [SMN structural haplotypes (sHap)](https://github.com/Asian-Pan-Genome/APGp1/blob/main/Complex_loci/SMN/SMN_haplotypes_APGp1_HPRCy1_HGSVC3.csv) | TXT | sHap assignments for 434 fully resolved SMN loci |
 
 ---
