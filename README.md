@@ -151,7 +151,7 @@ For specific analyses and methodologies developed during APGp1, please refer to 
 * [Schizophrenia pangenome study]() (Yang et al., ubpublished)
 
 
-* [PG-NUMT](https://github.com/LiantingFu/NUMT_Analysis) ([Fu et al., 2026, BioRxiv](https://www.biorxiv.org/content/10.64898/2026.02.26.708114v1.full))
+* [PG-NUMT](https://github.com/LiantingFu/NUMT_Analysis) ([Fu et al., 2026, Nature Communications](https://www.nature.com/articles/s41467-026-71348-5))
 
 
 ---
