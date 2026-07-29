@@ -145,6 +145,9 @@ For specific analyses and methodologies developed during APGp1, please refer to 
 * [Complex regions](https://github.com/Hanjunmin/complex_region) (Han et al., unpublished)
 
 
+* [Assembly popgen analysis](https://github.com/Asian-Pan-Genome/APGp1-Haplotype-Popgen) (Liu et al., unpublished)
+
+
 * [Tibetan pangenome](https://doi.org/10.64898/2025.12.16.694547) (He et al., 2025, bioRxiv)
 
 
