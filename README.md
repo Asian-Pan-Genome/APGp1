@@ -131,31 +131,33 @@ Annotations are available for each APGp1 assembly.
 
 For specific analyses and methodologies developed during APGp1, please refer to the following companion studies:
 
-* [Centromere](https://github.com/Asian-Pan-Genome/Centromere)  (Sun et al., unpublished)
+* [Human centromere](https://github.com/Asian-Pan-Genome/Centromere)  ([Sun et al., 2026, BioRxiv](https://www.biorxiv.org/content/10.64898/2026.07.22.740206v1))
   
 
-* [Archaic introgression](https://github.com/Asian-Pan-Genome/ArchaicIntrogression)  (Suo et al., unpulished)
+* [Archaic introgression](https://github.com/Asian-Pan-Genome/ArchaicIntrogression)  ([Suo et al., 2026, BioRxiv](https://www.biorxiv.org/content/10.64898/2026.07.23.740208v1))
 
     New method: [ASMaid](https://github.com/Asian-Pan-Genome/ASMaid)
 
 
-* [Y chromosome](https://github.com/Asian-Pan-Genome/APGp1-Y)  (Liu et al., unpublished)
+* [Y chromosome](https://github.com/Asian-Pan-Genome/APGp1-Y)  ([Liu et al., 2026, MedRxiv](https://www.medrxiv.org/content/10.64898/2026.07.27.26359059v1))
 
 
+* [PanSVmerger](https://github.com/tingting100/PanSVmerger) ([Yang et al., 2026, BioRxiv](https://www.biorxiv.org/content/10.64898/2026.08.13.744739v1)])
+
+
+* [haploblock-based population genetics](https://github.com/Asian-Pan-Genome/APGp1-Haplotype-Popgen) (Liu et al., 2026, BioRxiv)
+
+ 
 * [Complex regions](https://github.com/Hanjunmin/complex_region) (Han et al., unpublished)
 
 
-* [Assembly popgen analysis](https://github.com/Asian-Pan-Genome/APGp1-Haplotype-Popgen) (Liu et al., unpublished)
-
-
-* [Tibetan pangenome](https://doi.org/10.64898/2025.12.16.694547) (He et al., 2025, bioRxiv)
-
-
-* [Schizophrenia pangenome study]() (Yang et al., ubpublished)
+* [Schizophrenia pangenome study]() (Yang et al., unpublished)
 
 
 * [PG-NUMT](https://github.com/LiantingFu/NUMT_Analysis) ([Fu et al., 2026, Nature Communications](https://www.nature.com/articles/s41467-026-71348-5))
 
+
+* [Tibetan pangenome](https://doi.org/10.64898/2025.12.16.694547) ([He et al., 2025, bioRxiv](https://doi.org/10.64898/2025.12.16.694547))
 
 ---
 
